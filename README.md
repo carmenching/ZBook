@@ -1,19 +1,35 @@
-<<<<<<< HEAD
 # facebook-lite
+ <br>
 
 Basic Git commands :
+ <br>
 
 #pull from github repository
+ <br>
 git pull <repo> <branch> 
+ <br>
 #push to github  repository
+   <br>
 git push <repo> <branch>
+ <br>
+ <br>
 
 git checkout <#commit>
+ <br>
+
 git checkout -b <branch>
+ <br>
+ <br>
 
 git add <path>
+   <br>
+
 git commit -m "<message>"
+ <br>
+
 git merge <branch> -m "message"
+ <br>
+
 =======
 # ZBook
 Projet de Cours Dev
