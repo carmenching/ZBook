@@ -12,3 +12,4 @@ git checkout -b <branch>
 
 git add <path>
 git commit -m "<message>"
+git merge <branch> -m "message"
