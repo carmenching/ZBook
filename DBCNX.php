@@ -6,7 +6,7 @@ $password = '7yng5velfj';
 $db = 'breto1088830_2spl7';
 
 // Connexion à la DB
-$conn = new mysqli();
+$conn = new mysqli($servername, $db, $username, $password);
 
 //Checker que la connexion fonctionne
 if ($cnx->cnx_error){
