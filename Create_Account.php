@@ -10,5 +10,5 @@ $Password
 $Email
 $Birthdate
 
-"INSERT INTO USER (LastNameUser, FirstNameUser, PseudoUser, PasswordUser, MailUser, BirthDateUser) VALUES ($Lastname, $Firstname, $Pseudo, $ Password, $Email, $Birthdate);"
+"INSERT INTO USER (LastNameUser, FirstNameUser, PseudoUser, PasswordUser, MailUser, BirthDateUser) VALUES ($Lastname, $Firstname, $Pseudo, $Password, $Email, $Birthdate);"
 ?>
