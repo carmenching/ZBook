@@ -5,9 +5,13 @@ html {
 	line-height: 1.5;	
 }
 
+
+/*liste des ID spécifiques triés dans l'ordre du HTML (avec indentations)*/
 #TOPBAR {
 	display: flex;
 	justify-content: space-around;
+	background-color: #2D2A32;
+	color: white;
 }
 
 #FULLPAGE {
@@ -18,7 +22,7 @@ html {
 	#LEFTBAR {
 
 	}
-	
+
 	#MIDDLE {
 		
 	}
