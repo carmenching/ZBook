@@ -6,7 +6,15 @@ html {
 }
 
 
-/*liste des ID spécifiques triés dans l'ordre du HTML (avec indentations)*/
+
+
+
+
+
+
+
+
+/*   	FEED     */
 #TOPBAR {
 	display: flex;
 	justify-content: space-around;
