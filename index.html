@@ -8,18 +8,26 @@
 
 	<!-- barre du haut, contiendra logo, shearchbar etc -->
 	<div id="TOPBAR">
-		<p>JE SUIS UNE BARRE DE RECHERCHE MDR</p>
+		<ul id="TOPBARLIST">
+			<li><a href=""><img src="mainlogo.png" id="LOGO"></a></li>
+			<li>
+				<div class="search">
+    				<input type="text" class="searchTerm" placeholder="What are you looking for?">
+    				<button type="submit" class="searchButton"></button>
+        		</div>
+        	</li>
+		</ul>
 	</div>
 
 <!-- contient la page en elle même, timeline + barre latérale, .... -->
 <div id="FULLPAGE">	
 
 	<!-- Barre latérale gauche -->
-	<div id="LEFTBAR">
-		<ul>
-			<li>PROFIL</li>
-			<li>CHAT</li>
-			<li>AMIS</li>
+	<div class="sidebar">
+		<ul id="LEFTBAR">
+			<li><a href="">PROFIL</a></li>
+			<li><a href="">CHAT</a></li>
+			<li><a href="">AMIS</a></li>
 		</ul>
 	</div>
 
@@ -35,7 +43,7 @@
 		<div id="TIMELINE">
 
 			<!-- ceci est un type post: -->
-			<article class="FULLPOST">
+			<article class="fullpost">
 				<span>
 					<p>JE SUIS UN POST</p>
 				</span>
@@ -45,11 +53,11 @@
 	</div>
 
 	<!-- Barre latérale de menu -->
-	<div id="RIGHTBAR">
-		<ul>
-			<li>PROFIL</li>
-			<li>CHAT</li>
-			<li>AMIS</li>
+	<div class="sidebar">
+		<ul id="RIGHTBAR">
+			<li><a href="">PROFIL</a></li>
+			<li><a href="">CHAT</a></li>
+			<li><a href="">AMIS</a></li>
 		</ul>
 	</div>
 </div>

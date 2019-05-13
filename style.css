@@ -5,26 +5,36 @@ html {
 	line-height: 1.5;	
 }
 
-
-
-
-
-
-
-
-
-
-/*   	FEED     */
-#TOPBAR {
-	display: flex;
-	justify-content: space-around;
-	background-color: #2D2A32;
-	color: white;
+ul {
+	list-style: none;
 }
+
+
+
+
+
+
+
+
+/*   	FEED      */
+#TOPBAR {
+	background-color: #2D2A32;
+	color: #FFEFBD;
+}
+	#TOPBARLIST{
+		vertical-align: middle;
+		display: flex;
+		justify-content: space-between;
+	}
+		#LOGO{
+			width: 34px;
+			height: 34px;
+		}
+
 
 #FULLPAGE {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 }
 
 	#LEFTBAR {
@@ -47,6 +57,12 @@ html {
 
 	}
 
-.FULLPOST {
+.fullpost {
 
+}
+
+
+.sidebar {
+	background-color: #B5D6B2;
+	padding: 20px 50px 70px 50px;
 }
