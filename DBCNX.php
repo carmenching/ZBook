@@ -1,5 +1,9 @@
 <?php
 //Récupérer les données de connexions
+$servername = '185.98.131.90';
+$username = 'breto1088830_2spl7';
+$password = '7yng5velfj';
+$db = 'breto1088830_2spl7';
 
 // Connexion à la DB
 $conn = new mysqli();
