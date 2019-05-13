@@ -1,0 +1,71 @@
+html {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	text-align: center;	
+}
+
+ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+
+
+
+
+
+
+
+/*   	FEED      */
+#TOPBAR {
+	background-color: #2D2A32;
+	color: #FFEFBD;
+}
+	#TOPBARLIST{
+		vertical-align: middle;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+		#LOGO{
+			height: 54px;
+			padding-left: 10px;
+		}
+
+
+#FULLPAGE {
+	display: flex;
+	justify-content: space-between;
+}
+
+	#LEFTBAR {
+
+	}
+
+	#MIDDLE {
+		
+	}
+
+		#PUBLISHER {
+
+		}
+
+		#TIMELINE {
+
+		}
+
+	#RIGHTBAR {
+
+	}
+
+.fullpost {
+
+}
+
+
+.sidebar {
+	background-color: #B5D6B2;
+	padding: 20px 50px 70px 50px;
+}
