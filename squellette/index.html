@@ -9,10 +9,10 @@
 	<!-- barre du haut, contiendra logo, shearchbar etc -->
 	<div id="TOPBAR">
 		<ul id="TOPBARLIST">
-			<li><a href=""><img src="mainlogo.png" id="LOGO"></a></li>
+			<li><a href="index.html"><img src="mainlogo.png" id="LOGO"></a></li>
 			<li>
 				<div class="search">
-    				<input type="text" class="searchTerm" placeholder="What are you looking for?">
+    				<input type="text" class="searchTerm" placeholder="Rechercher ...">
     				<button type="submit" class="searchButton"></button>
         		</div>
         	</li>
@@ -25,9 +25,9 @@
 	<!-- Barre latérale gauche -->
 	<div class="sidebar">
 		<ul id="LEFTBAR">
-			<li><a href="">PROFIL</a></li>
-			<li><a href="">CHAT</a></li>
-			<li><a href="">AMIS</a></li>
+			<li class="sidebarlink"><a href="">PROFIL</a></li>
+			<li class="sidebarlink"><a href="">CHAT</a></li>
+			<li class="sidebarlink"><a href="">AMIS</a></li>
 		</ul>
 	</div>
 
@@ -36,7 +36,8 @@
 
 		<!-- module de publication -->
 		<div id="PUBLISHER">
-			<p>CREER DES PUBLICATIONS</p>
+			<p>Publier :</p>
+			<input type="text">
 		</div>
 		
 		<!-- la timeline en elle même -->
@@ -44,9 +45,8 @@
 
 			<!-- ceci est un type post: -->
 			<article class="fullpost">
-				<span>
-					<p>JE SUIS UN POST</p>
-				</span>
+				<p><a href="">Robert Roger</a></p>
+				<p class="postcontent">J'ai mangé un ananas ce midi, c'était bon putain! j'aime me mettre des concombres dans les oreilles en pensant à ta mère. Je crois bien que je vis ma meilleure vie. #CACTUS</p>
 			</article>
 
 		</div>
@@ -55,9 +55,9 @@
 	<!-- Barre latérale de menu -->
 	<div class="sidebar">
 		<ul id="RIGHTBAR">
-			<li><a href="">PROFIL</a></li>
-			<li><a href="">CHAT</a></li>
-			<li><a href="">AMIS</a></li>
+			<li class="sidebarlink"><a href="">PROFIL</a></li>
+			<li class="sidebarlink"><a href="">CHAT</a></li>
+			<li class="sidebarlink"><a href="">AMIS</a></li>
 		</ul>
 	</div>
 </div>

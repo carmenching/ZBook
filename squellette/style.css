@@ -1,7 +1,7 @@
 html {
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 1rem;
-	font-weight: 400;
+	font-weight: 40;
 	line-height: 1.5;
 	text-align: center;	
 }
@@ -9,6 +9,11 @@ html {
 ul {
 	list-style: none;
 	padding-left: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
 }
 
 
@@ -45,11 +50,16 @@ ul {
 	}
 
 	#MIDDLE {
+		width: 68%;
 		
 	}
 
 		#PUBLISHER {
-
+			background-color: #2D2A32;
+			color: white;
+			line-height: 0.2;
+			padding-top: 5px;
+			padding-bottom: 5px;
 		}
 
 		#TIMELINE {
@@ -61,11 +71,35 @@ ul {
 	}
 
 .fullpost {
+	background-color: #fffacc;
+	align-content: center;
+}
 
+.postcontent {
+	font-size: 0.7rem;	
 }
 
 
 .sidebar {
-	background-color: #B5D6B2;
-	padding: 20px 50px 70px 50px;
+	background-color: #2D2A32;
+	padding-left: 1%;
+	padding-right: 1%;
+}
+
+.sidebarlink {
+	list-style: none;
+	padding-left: 0;
+	padding: 5px;
+	margin: 5px;
+	border-radius: 10px;
+	background-color: #2D2A32;
+	color: #FFEFBD;
+}
+
+.sidebarlink :hover {
+	color: #434DFF;
+	cursor: pointer;
+	-webkit-transition: color 0.1s ease-out;
+    -moz-transition: color 0.1s ease-out;
+    transition: color 0.1s ease-out;
 }
