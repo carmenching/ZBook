@@ -1,55 +1,70 @@
 <?php
-//Cette fonction doit être appelée avant tout code html
-session_start();
+require('config/DBCNX.php');
 
-//On donne ensuite un titre à la page, puis on appelle notre fichier debut.php
-$titre = "Index du forum";
-include("includes/identifiants.php");
-include("includes/debut.php");
-include("includes/menu.php");
-<?php
-echo'<i>Vous êtes ici : </i><a href ="./index.php">Index du forum</a>';
 ?>
-<h1>Mon super forum</h1>
+<!DOCTYPE html>
+<html>
+<head>
+	<title> ZBook - Accueil </title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
 
-<?php
-//Initialisation de deux variables
-$totaldesmessages = 0;
-$categorie = NULL;
-?>
-<?php
+	<!-- barre du haut, contiendra logo, shearchbar etc -->
+	<div id="TOPBAR">
+		<ul id="TOPBARLIST">
+			<li><a href="index.html"><img src="mainlogo.png" id="LOGO"></a></li>
+			<li>
+				<div class="search">
+    				<input type="text" class="searchTerm" placeholder="Rechercher ...">
+    				<button type="submit" class="searchButton"></button>
+        		</div>
+        	</li>
+		</ul>
+	</div>
 
-//Cette requête permet d'obtenir tout sur le forum
-$query=$db->prepare('SELECT IDUser, LastNameUser, FirstNameUser, PseudoUser, BirthDateUser
-FROM USER
-WHERE IDUser <= :lvl ');
-$query->bindValue(':lvl',$lvl,PDO::PARAM_INT);
-$query->execute();
-?>
+<!-- contient la page en elle même, timeline + barre latérale, .... -->
+<div id="FULLPAGE">	
 
-<table>
-<?php
-//Début de la boucle
-while($data = $query->fetch())
-{
-    //On affiche chaque catégorie
-    if( $categorie != $data['IDUser'] )
-    {
-        //Si c'est une nouvelle catégorie on l'affiche
-       
-        $categorie = $data['IDUser'];
-        ?>
-        <tr>
-        <th></th>
-        <th class="titre"><strong><?php echo stripslashes(htmlspecialchars($data['IDUser'])); ?>
-        </strong></th>             
-        <th class="nombremessages"><strong>Sujets</strong></th>       
-        <th class="nombresujets"><strong>Messages</strong></th>       
-        <th class="derniermessage"><strong>Dernier message</strong></th>   
-        </tr>
-        <?php
-               
-    }
+	<!-- Barre latérale gauche -->
+	<div class="sidebar">
+		<ul id="LEFTBAR">
+			<li class="sidebarlink"><a href="">PROFIL</a></li>
+			<li class="sidebarlink"><a href="">CHAT</a></li>
+			<li class="sidebarlink"><a href="">AMIS</a></li>
+		</ul>
+	</div>
 
-    //Ici, on met le contenu de chaque catégorie
-    ?>
+	<!-- contient la division centrale de la page (timeline + module de publication) -->
+	<div id="MIDDLE">
+
+		<!-- module de publication -->
+		<div id="PUBLISHER">
+			<p>Publier :</p>
+			<input type="text">
+		</div>
+		
+		<!-- la timeline en elle même -->
+		<div id="TIMELINE">
+
+			<!-- ceci est un type post: -->
+			<article class="fullpost">
+				<p><a href="">Robert Roger</a></p>
+				<p class="postcontent">J'ai mangé un ananas ce midi, c'était bon putain! j'aime me mettre des concombres dans les oreilles en pensant à ta mère. Je crois bien que je vis ma meilleure vie. #CACTUS</p>
+			</article>
+
+		</div>
+	</div>
+
+	<!-- Barre latérale de menu -->
+	<div class="sidebar">
+		<ul id="RIGHTBAR">
+			<li class="sidebarlink"><a href="">PROFIL</a></li>
+			<li class="sidebarlink"><a href="">CHAT</a></li>
+			<li class="sidebarlink"><a href="">AMIS</a></li>
+		</ul>
+	</div>
+</div>
+
+</body>
+</html>
