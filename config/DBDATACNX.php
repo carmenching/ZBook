@@ -1,8 +1,8 @@
 <?php
-$DB['server'] = '185.98.131.90';
-$DB['user'] = 'breto1088830_2spl7';
-$DB['password'] = '7yng5velfj';
-$DB['db'] = 'breto1088830_2spl7';
+$DB['server'] = 'localhost';
+$DB['user'] = 'id9626323_tifaky';
+$DB['password'] = 'tifa9205';
+$DB['db'] = 'id9626323_zbookdemo';
 $DB['prefix'] = '';
 $DB['type'] = 'mysqli';
 ?>
