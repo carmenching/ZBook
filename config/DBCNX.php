@@ -1,16 +1,29 @@
 <?php
+
 //R�cup�rer les donn�es de connexions
-$servername = '185.98.131.90';
-$username = 'breto1088830_2spl7';
-$password = '7yng5velfj';
-$db = 'breto1088830_2spl7';
+
+$servername = 'localhost';
+
+$username = 'id9626323_tifaky';
+
+$password = 'tifa9205';
+
+$db = 'id9626323_zbookdemo';
+
+
 
 // Connexion � la DB
-$conn = new mysqli($servername, $db, $username, $password);
 
-//Checker que la connexion fonctionne
-if ($cnx->cnx_error){
-	die("Impossible de se connecter" . $connection->connect_error);
+$mysqli = new mysqli($servername, $username, $password, $db);
+
+if ($mysqli->connect_errno) {
+
+    echo "Echec lors de la connexion à MySQL : (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+
 }
-echo "Connexion r�ussie !";
+
+echo $mysqli->host_info . "\n";
+
+
+
 ?>
