@@ -13,7 +13,7 @@ require('config/DBCNX.php');
 	<!-- barre du haut, contiendra logo, shearchbar etc -->
 	<div id="TOPBAR">
 		<ul id="TOPBARLIST">
-			<li><a href="index.html"><img src="mainlogo.png" id="LOGO"></a></li>
+			<li><a href="index.html"><img src="img/mainlogo.png" id="LOGO"></a></li>
 			<li>
 				<div class="search">
     				<input type="text" class="searchTerm" placeholder="Rechercher ...">
@@ -40,14 +40,27 @@ require('config/DBCNX.php');
 
 		<!-- module de publication -->
 		<div id="PUBLISHER">
+			<form action="publications.php">
 			<p>Publier :</p>
 			<input type="text">
+			<button type="submit">Submit</button>
+			</form>
 		</div>
 		
 		<!-- la timeline en elle même -->
 		<div id="TIMELINE">
 
 			<!-- ceci est un type post: -->
+<?php
+		if ($fetch = $mysqli->query("SELECT DatePost, ContentPost FROM POST ORDER BY DatePost")) {
+			while ($post = $fetch->fetch_assoc()) {
+				echo "<article class=\"fullpost\">
+				<p><a href=\"\">Robert Roger</a></p>
+				<p class=\"postcontent\">" . $post['ContentPost'] . "</p></article>";
+			}
+		}
+		$mysqli->close();
+?>
 			<article class="fullpost">
 				<p><a href="">Robert Roger</a></p>
 				<p class="postcontent">J'ai mangé un ananas ce midi, c'était bon putain! j'aime me mettre des concombres dans les oreilles en pensant à ta mère. Je crois bien que je vis ma meilleure vie. #CACTUS</p>
