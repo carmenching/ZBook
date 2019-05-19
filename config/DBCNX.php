@@ -4,9 +4,9 @@
 
 $servername = 'localhost';
 
-$username = 'root';
+$username = 'id9626323_tifaky';
 
-$password = '';
+$password = 'tifa9205';
 
 $db = 'zbook';
 
