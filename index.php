@@ -40,9 +40,9 @@ require('config/DBCNX.php');
 
 		<!-- module de publication -->
 		<div id="PUBLISHER">
-			<form action="publications.php">
+			<form action="publications.php" method="post">
 			<p>Publier :</p>
-			<input type="text">
+			<input type="text" name="postContent">
 			<button type="submit">Submit</button>
 			</form>
 		</div>
