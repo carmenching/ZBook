@@ -10,18 +10,18 @@ require('config/DBCNX.php');
 </head>
 <body>
 
-	<!-- barre du haut, contiendra logo, shearchbar etc -->
-	<div id="TOPBAR">
-		<ul id="TOPBARLIST">
-			<li><a href="index.html"><img src="img/mainlogo.png" id="LOGO"></a></li>
-			<li>
-				<div class="search">
-    				<input type="text" class="searchTerm" placeholder="Rechercher ...">
-    				<button type="submit" class="searchButton"></button>
-        		</div>
-        	</li>
-		</ul>
-	</div>
+<!-- barre du haut, contiendra logo, shearchbar etc -->
+<div id="TOPBAR">
+	<ul id="TOPBARLIST">
+		<li><a href="index.html"><img src="img/mainlogo.png" id="LOGO"></a></li>
+		<li>
+			<div class="search">
+				<input type="text" class="searchTerm" placeholder="Rechercher ...">
+				<button type="submit" class="searchButton"></button>
+    		</div>
+    	</li>
+	</ul>
+</div>
 
 <!-- contient la page en elle même, timeline + barre latérale, .... -->
 <div id="FULLPAGE">	
@@ -29,9 +29,9 @@ require('config/DBCNX.php');
 	<!-- Barre latérale gauche -->
 	<div class="sidebar">
 		<ul id="LEFTBAR">
-			<li class="sidebarlink"><a href="">PROFIL</a></li>
-			<li class="sidebarlink"><a href="">CHAT</a></li>
-			<li class="sidebarlink"><a href="">AMIS</a></li>
+            <li class="sidebarlink"><a href=""><img src="img/buttonprofile.png"><p class="hiddenwithouthover">PROFIL</p></a></li>
+            <li class="sidebarlink"><a href="messagerie.php"><img src="img/buttonmessage.png"><p class="hiddenwithouthover">CHAT</p></a></li>
+            <li class="sidebarlink"><a href=""><img src="img/buttonfriends.png"><p class="hiddenwithouthover">AMIS</p></a></li>
 		</ul>
 	</div>
 

@@ -94,6 +94,7 @@ a {
 	border-radius: 10px;
 	background-color: #2D2A32;
 	color: #FFEFBD;
+	margin-bottom: 10px;
 }
 
 .sidebarlink :hover {
@@ -102,4 +103,15 @@ a {
 	-webkit-transition: color 0.1s ease-out;
     -moz-transition: color 0.1s ease-out;
     transition: color 0.1s ease-out;
+}
+
+.hiddenwithouthover {
+	display: none;
+}
+
+.hiddenwithouthover :hover {
+	display: all;
+	-webkit-transition: color 0.1s ease-out;
+    -moz-transition: color 0.1s ease-out;
+    transition: color 0.1s ease-out; 
 }
