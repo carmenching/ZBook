@@ -29,9 +29,9 @@ require('config/DBCNX.php');
 	<!-- Barre latérale gauche -->
 	<div class="sidebar">
 		<ul id="LEFTBAR">
-            <li class="sidebarlink"><a href=""><img src="img/buttonprofile.png"><p class="hiddenwithouthover">PROFIL</p></a></li>
-            <li class="sidebarlink"><a href="messagerie.php"><img src="img/buttonmessage.png"><p class="hiddenwithouthover">CHAT</p></a></li>
-            <li class="sidebarlink"><a href=""><img src="img/buttonfriends.png"><p class="hiddenwithouthover">AMIS</p></a></li>
+            <li class="sidebarlink"><a href="" class="imgplustext"><img src="img/buttonprofile.png" class="button"><p class="hiddenwithouthover">PROFIL</p></a></li>
+            <li class="sidebarlink"><a href="messagerie.php" class="imgplustext"><img src="img/buttonmessage.png" class="button"><p class="hiddenwithouthover">CHAT</p></a></li>
+            <li class="sidebarlink"><a href="" class="imgplustext"><img src="img/buttonfriends.png" class="button"><p class="hiddenwithouthover">AMIS</p></a></li>
 		</ul>
 	</div>
 
@@ -61,10 +61,10 @@ require('config/DBCNX.php');
 		}
 		$mysqli->close();
 ?>
-			<article class="fullpost">
-				<p><a href="">Robert Roger</a></p>
-				<p class="postcontent">J'ai mangé un ananas ce midi, c'était bon putain! j'aime me mettre des concombres dans les oreilles en pensant à ta mère. Je crois bien que je vis ma meilleure vie. #CACTUS</p>
-			</article>
+            <article class="fullpost">
+                <p><a href="">Robert Roger</a></p>
+                <p class="postcontent">J'ai mangé un ananas ce midi, c'était bon putain! j'aime me mettre des concombres dans les oreilles en pensant à ta mère. Je crois bien que je vis ma meilleure vie. #CACTUS</p>
+            </article>
 
 		</div>
 	</div>

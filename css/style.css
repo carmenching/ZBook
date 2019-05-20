@@ -79,6 +79,20 @@ a {
 	font-size: 0.7rem;	
 }
 
+/*	MESSAGERIE: ;*/
+
+#FULLMESSAGEFEED {
+		width: 68%;
+}
+
+.messagegroup {
+	margin: 40px;
+  display: inline-block;
+  position: relative;
+	width: 200px;
+	height: auto;
+	background-color: lightyellow;
+}
 
 .sidebar {
 	padding-left: 1%;
@@ -95,6 +109,8 @@ a {
 	background-color: #2D2A32;
 	color: #FFEFBD;
 	margin-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .sidebarlink :hover {
@@ -109,9 +125,14 @@ a {
 	display: none;
 }
 
-.hiddenwithouthover :hover {
-	display: all;
-	-webkit-transition: color 0.1s ease-out;
-    -moz-transition: color 0.1s ease-out;
-    transition: color 0.1s ease-out; 
+.hiddenwithouthover .button:hover {
+	display: contents;
+}
+
+.imgplustext {
+	display: inline;
+}
+
+.pponlist {
+	margin: 0px 10px 0px 0px;
 }
