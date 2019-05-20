@@ -2,13 +2,13 @@
 
 //R�cup�rer les donn�es de connexions
 
-$servername = 'localhost';
+$servername = '9883e481-c82d-46c5-b38a-fc00215f3a9c.zbooklike-4405.mysql.dbs.scalingo.com:32235';
 
-$username = 'id9626323_tifaky';
+$username = 'zbooklike_4405';
 
-$password = 'tifa9205';
+$password = 'bzDPCikzVTgmw1hmv1Tn';
 
-$db = 'zbook';
+$db = 'zbooklike_4405';
 
 
 
