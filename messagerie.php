@@ -25,7 +25,23 @@ require('config/DBCNX.php');
 
 <!-- contient la page en elle même, timeline + barre latérale, .... -->
 <div id="FULLPAGE">
+
+	<!-- section des amis -->
+	<div>
+		<!-- liste des gens -->
+		<ul>
+			<li>
+				<a href="">
+					<img src=""> 
+					<p>CARLO</p>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+	<!-- section messagerie -->
 	<div>
 		
 	</div>
+
 </div>
