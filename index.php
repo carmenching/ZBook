@@ -1,55 +1,43 @@
 <?php
-//Cette fonction doit être appelée avant tout code html
-session_start();
-
-//On donne ensuite un titre à la page, puis on appelle notre fichier debut.php
-$titre = "Index du forum";
-include("includes/identifiants.php");
-include("includes/debut.php");
-include("includes/menu.php");
-<?php
-echo'<i>Vous êtes ici : </i><a href ="./index.php">Index du forum</a>';
+include('config.php')
 ?>
-<h1>Mon super forum</h1>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta content="text/html; charset=utf-8" />
+        <link href="<?php echo $design; ?>/style.css" rel="stylesheet" title="Style" />
+        <title>TEST</title>
+    </head>
+    <body>
+    	<div class="header">
+        	<a href="<?php echo $url_home; ?>"><img src="<?php echo $design; ?>/images/zbook.jpg" alt="Espace Membre" /></a>
+	    </div>
+        <div class="content">
 <?php
-//Initialisation de deux variables
-$totaldesmessages = 0;
-$categorie = NULL;
+//On affiche un message de bienvenue, si lutilisateur est connecte, on affiche son pseudo
 ?>
+Bonjour<?php if(isset($_SESSION['username'])){echo ' '.htmlentities($_SESSION['username'], ENT_QUOTES, 'UTF-8');} ?>,<br />
+Bienvenue sur notre site.<br />
+Vous pouvez <a href="users.php">voir la liste des utilisateurs</a>.<br /><br />
 <?php
-
-//Cette requête permet d'obtenir tout sur le forum
-$query=$db->prepare('SELECT IDUser, LastNameUser, FirstNameUser, PseudoUser, BirthDateUser
-FROM USER
-WHERE IDUser <= :lvl ');
-$query->bindValue(':lvl',$lvl,PDO::PARAM_INT);
-$query->execute();
-?>
-
-<table>
-<?php
-//Début de la boucle
-while($data = $query->fetch())
+//Si lutilisateur est connecte, on lui donne un lien pour modifier ses informations, pour voir ses messages et un pour se deconnecter
+if(isset($_SESSION['username']))
 {
-    //On affiche chaque catégorie
-    if( $categorie != $data['IDUser'] )
-    {
-        //Si c'est une nouvelle catégorie on l'affiche
-       
-        $categorie = $data['IDUser'];
-        ?>
-        <tr>
-        <th></th>
-        <th class="titre"><strong><?php echo stripslashes(htmlspecialchars($data['IDUser'])); ?>
-        </strong></th>             
-        <th class="nombremessages"><strong>Sujets</strong></th>       
-        <th class="nombresujets"><strong>Messages</strong></th>       
-        <th class="derniermessage"><strong>Dernier message</strong></th>   
-        </tr>
-        <?php
-               
-    }
+?>
+<a href="edit_infos.php">Modifier mes informations personnelles</a><br />
+<a href="connexion.php">Se d&eacute;connecter</a>
+<?php
+}
+else
+{
+//Sinon, on lui donne un lien pour sinscrire et un autre pour se connecter
+?>
+<a href="sign_up.php">Inscription</a><br />
+<a href="connexion.php">Se connecter</a>
+<?php
+}
+?>
+		</div>
 
-    //Ici, on met le contenu de chaque catégorie
-    ?>
+	</body>
+</html>
