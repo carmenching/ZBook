@@ -1,48 +1,35 @@
-html {
-	font-family: Verdana, Geneva, sans-serif;
-	font-size: 1rem;
-	font-weight: 40;
-	line-height: 1.5;
-	text-align: center;	
+html, body {
+  width: 100%;
 }
 
-ul {
-	list-style: none;
-	padding-left: 0;
+h1 {
+	text-align: center;
 }
 
-a {
-	text-decoration: none;
-	color: inherit;
+input[search] {
+	
 }
 
-
-
-
-
-
-
-
-/*   	FEED      */
-#TOPBAR {
+#TOPTOPBAR {
 	background-color: #2D2A32;
+	color: #FFEFBD;
+}
+
+ #BACKTOPBAR {
+	background-color: #FFEFBD;
 	color: #FFEFBD;
 }
 	#TOPBARLIST{
 		vertical-align: middle;
-		display: flex;
-		justify-content: space-between;
 		align-items: center;
 	}
 		#LOGO{
-			height: 54px;
-			padding-left: 10px;
+			max-height: 80px;
+			max-width: auto;
 		}
 
 
 #FULLPAGE {
-	display: flex;
-	justify-content: space-between;
 }
 
 	#LEFTBAR {
@@ -99,18 +86,11 @@ a {
 	padding-right: 1%;
 }
 
-.sidebarlink img {
-	width: 30px;
-}
-
 .sidebarlink {
-	list-style: none;
-	border-radius: 10px;
-	background-color: #2D2A32;
-	color: #FFEFBD;
-	margin-bottom: 10px;
-	padding-left: 10px;
-	padding-right: 10px;
+	max-width: 80px;
+	max-height: auto;
+	min-width: 80px;
+	min-height: auto;
 }
 
 .sidebarlink :hover {
@@ -135,4 +115,26 @@ a {
 
 .pponlist {
 	margin: 0px 10px 0px 0px;
+}
+
+.spacer {
+     padding-top: 80px;
+ }
+
+ .lilspacer {
+     padding-top: 15px;
+ }
+
+ .void {
+ 	
+ }
+
+.inscriptionitem {
+	
+}
+
+#INSCRIPTIONCENTER {
+	background-color: #FFEFBD;
+	color: #2D2A32;
+	border-radius: 40px;
 }

@@ -1,42 +1,19 @@
 <?php
 require('config/DBCNX.php');
-
+require('headerpreset.html');
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title> ZBook - Accueil </title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-<body>
-
-<!-- barre du haut, contiendra logo, shearchbar etc -->
-<div id="TOPBAR">
-	<ul id="TOPBARLIST">
-		<li><a href="index.html"><img src="img/mainlogo.png" id="LOGO"></a></li>
-		<li>
-			<div class="search">
-				<input type="text" class="searchTerm" placeholder="Rechercher ...">
-				<button type="submit" class="searchButton"></button>
-    		</div>
-    	</li>
-	</ul>
-</div>
 
 <!-- contient la page en elle même, timeline + barre latérale, .... -->
-<div id="FULLPAGE">	
+<div class="spacer"></div>
+
+<div id="FULLPAGE" class="row">	
 
 	<!-- Barre latérale gauche -->
-	<div class="sidebar">
-		<ul id="LEFTBAR">
-            <li class="sidebarlink"><a href="" class="imgplustext"><img src="img/buttonprofile.png" class="button"><p class="hiddenwithouthover">PROFIL</p></a></li>
-            <li class="sidebarlink"><a href="messagerie.php" class="imgplustext"><img src="img/buttonmessage.png" class="button"><p class="hiddenwithouthover">CHAT</p></a></li>
-            <li class="sidebarlink"><a href="" class="imgplustext"><img src="img/buttonfriends.png" class="button"><p class="hiddenwithouthover">AMIS</p></a></li>
-		</ul>
+	<div class="void col-0 col-sm-1 col-md-2">
 	</div>
 
 	<!-- contient la division centrale de la page (timeline + module de publication) -->
-	<div id="MIDDLE">
+	<div id="MIDDLE" class="col-12 col-sm-10 col-md-8">
 
 		<!-- module de publication -->
 		<div id="PUBLISHER">
@@ -70,14 +47,13 @@ require('config/DBCNX.php');
 	</div>
 
 	<!-- Barre latérale de menu -->
-	<div class="sidebar">
-		<ul id="RIGHTBAR">
-			<li class="sidebarlink"><a href="">PROFIL</a></li>
-			<li class="sidebarlink"><a href="">CHAT</a></li>
-			<li class="sidebarlink"><a href="">AMIS</a></li>
-		</ul>
+	<div class="void col-0 col-sm-1 col-md-2">
 	</div>
 </div>
+
+<?php
+require('footerpreset.html');
+?>
 
 </body>
 </html>
