@@ -55,7 +55,7 @@ require('config/DBCNX.php');
 		if ($fetch = $mysqli->query("SELECT DatePost, ContentPost FROM POST ORDER BY DatePost")) {
 			while ($post = $fetch->fetch_assoc()) {
 				echo "<article class=\"fullpost\">
-				<p><a href=\"\">Robert Roger</a></p>
+				<p><a href=\"\">Robert Roger</a><small>".$post['DatePost']."</small></p>
 				<p class=\"postcontent\">" . $post['ContentPost'] . "</p></article>";
 			}
 		}
