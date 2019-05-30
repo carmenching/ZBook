@@ -10,6 +10,50 @@ input[search] {
 	
 }
 
+/*colors*/
+
+.bbb {
+	background-color: #2d2a32;
+}
+
+.bb {
+	background-color: #b5d6b2;
+}
+
+.wb {
+	background-color: #fdfefd;
+}
+
+.bcb {
+	background-color: #fffacc;
+}
+
+.bfb {
+	background-color: #ffefbd;
+}
+
+.bbt {
+	color: #2D2A32;
+}
+
+.bt {
+	color: #b5d6b2;
+}
+
+.wt {
+	color: #fdfefd;
+}
+
+.bct {
+	color: #fffacc;
+}
+
+.bft {
+	color: #ffefbd;
+}
+
+/*ids*/
+
 #TOPTOPBAR {
 	background-color: #2D2A32;
 	color: #FFEFBD;

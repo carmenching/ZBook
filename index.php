@@ -51,6 +51,8 @@ require('headerpreset.html');
 	</div>
 </div>
 
+<div class="spacer"></div>
+
 <?php
 require('footerpreset.html');
 ?>
