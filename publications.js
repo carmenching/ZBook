@@ -6,7 +6,7 @@ $('#submit_post').on('submit', function(e){
         url: 'publications.php',
         data: {postContent: postContent},
         success: function(data) {
-            $('#TIMELINE').html(data);
+            $('#TIMELINE').prepend(data);
         }
     })
     // var postForm = $(this),
