@@ -34,6 +34,7 @@ include 'template/header.html';
 			<!-- ceci est un type post: -->
 
 <?php
+		// recuperer tous les posts depuis la bdd
 		if ($fetch = $mysqli->query("SELECT DatePost, ContentPost FROM POST ORDER BY DatePost DESC")) {
 			while ($post = $fetch->fetch_assoc()) {
 				echo "<article class=\"fullpost\">
