@@ -14,7 +14,7 @@
    <input type="password" name="password" placeholder="Mot de passe" /><br /><br />
    <a href=".html"><input type="button" value="Connexion" /></a><br /><br />
        <div id="container">
-         Pas encore de compte? <a href="Inscription.html" style="font-family:'Play', sans-serif;">Inscrivez-vous ici</a>
+         Pas encore de compte? <a href="Inscription.php" style="font-family:'Play', sans-serif;">Inscrivez-vous ici</a>
          </form>
       </div>
     </body>

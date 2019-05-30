@@ -6,11 +6,11 @@
 </head>
 <body>
    <div class="signup">
-    <form>
+    <form action="new_inscription.php" method="POST" id="inscription_form">
      <h2 style="color: #fff;">Créer un compte</h2>
-     <input type="pseudo" name="pseudonyme" placeholder="Pseudo"><br><br>
-     <input type="text" name="username" placeholder="Prenom"><br><br>
-     <input type="text" name="username" placeholder="Nom"><br><br>
+     <input type="pseudo" name="username" placeholder="Pseudo"><br><br>
+     <input type="text" name="firstname" placeholder="Prenom"><br><br>
+     <input type="text" name="lastname" placeholder="Nom"><br><br>
      <input type="password" name="pass" placeholder="Mot de passe"><br><br>    
      <input type="password" name="pass" placeholder="Confirmez mot de passe"><br><br>   
      <input type="text" name="mail" placeholder="Adresse mail"><br><br>
