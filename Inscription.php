@@ -11,11 +11,11 @@
      <input type="pseudo" name="username" placeholder="Pseudo"><br><br>
      <input type="text" name="firstname" placeholder="Prenom"><br><br>
      <input type="text" name="lastname" placeholder="Nom"><br><br>
-     <input type="password" name="pass" placeholder="Mot de passe"><br><br>    
-     <input type="password" name="pass" placeholder="Confirmez mot de passe"><br><br>   
-     <input type="text" name="mail" placeholder="Adresse mail"><br><br>
-     <input type="date" name="date" placeholder="Date de naissance"><br><br>
-     <input type="button" value="Inscription" onclick="myFunction()"><br><br>
+     <input type="password" name="password" placeholder="Mot de passe"><br><br>    
+     <input type="password" name="repass" placeholder="Confirmez mot de passe"><br><br>   
+     <input type="email" name="mail" placeholder="Adresse mail"><br><br>
+     <input type="date" name="dob" placeholder="Date de naissance"><br><br>
+     <input type="submit" value="Inscription"><br><br>
     </form>
  </div>
 </body>
