@@ -6,7 +6,7 @@ if(isset($_POST['submit'])) {
     $password = $_POST['password']; 
     session_start();    
 
-    $userquery = "SELECT PseudoUser, PasswordUser FROM user WHERE PseudoUser =?";
+    $userquery = "SELECT IDUser, PseudoUser, PasswordUser FROM user WHERE PseudoUser =?";
     if($fetch = $mysqli->prepare($userquery)) {
         $fetch->bind_param("s", $username);
         $fetch->execute();
@@ -14,6 +14,7 @@ if(isset($_POST['submit'])) {
         while ($user = $result->fetch_assoc()) {
             $_SESSION['username'] = $user['PseudoUser'];
             $userPassword = $user['PasswordUser'];
+            $_SESSION['userID'] = $user['IDUser'];
         }
     }
     $mysqli->close();

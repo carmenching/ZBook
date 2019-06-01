@@ -1,11 +1,12 @@
 <?php
 require('config/DBCNX.php');
+session_start();
 
 // envoyer le contenu d'un post vers la bdd
 if($send = $mysqli->prepare("INSERT INTO post(ContentPost, IDUser) VALUES (?,?)")) {
     $si = "si";
     $postContent = $_POST['postContent'];
-    $userID = 1;
+    $userID = $_SESSION['userID'];
 
     $send->bind_param($si, $postContent, $userID);
     $send->execute();
@@ -13,12 +14,12 @@ if($send = $mysqli->prepare("INSERT INTO post(ContentPost, IDUser) VALUES (?,?)"
 $send->close();
 
 // afficher à l'aide d'ajax le dernier post 
-$showContent = $_POST['postContent'];
-$querySearch = "SELECT DatePost, ContentPost FROM POST ORDER BY DatePost DESC LIMIT 1";
+
+$querySearch = "SELECT user.FirstNameUser, user.LastNameUser, post.DatePost, post.ContentPost FROM post, user WHERE user.IDUser = post.IDUser ORDER BY post.DatePost DESC LIMIT 1";
 if ($fetch = $mysqli->query($querySearch)) {
     while ($post = $fetch->fetch_assoc()) {
         echo "<article class=\"fullpost\">
-        <p><a href=\"\">Robert Roger</a><small>".$post['DatePost']."</small></p>
+        <p><a href=\"\">".$post['FirstNameUser']." ".$post['LastNameUser']."</a><small>".$post['DatePost']."</small></p>
         <p class=\"postcontent\">" . $post['ContentPost'] . "</p></article>";
     }
 }
