@@ -12,6 +12,7 @@ if(isset($_POST['submit'])) {
     $lastname = $_POST['lastname']; 
     $password = $_POST['password']; 
     $repeatPassword = $_POST['repass']; 
+    $hash = password_hash($password, PASSWORD_DEFAULT);
     $mail = $_POST['mail']; 
     $dob = strtotime($_POST['dob']);
     $validate = true;
@@ -65,7 +66,7 @@ if ($validate) {
     if($subscribe = $mysqli->prepare("INSERT INTO user(LastNameUser, FirstNameUser, PseudoUser, PasswordUser, MailUser, BirthDateUser) VALUES (?,?,?,?,?,?)")) {
         $format = "ssssss";        
        
-        $subscribe->bind_param($format, $lastname, $firstname ,$username, $password, $mail, $dateDeNaissance);
+        $subscribe->bind_param($format, $lastname, $firstname ,$username, $hash, $mail, $dateDeNaissance);
         $subscribe->execute();
         echo "user added";
     };

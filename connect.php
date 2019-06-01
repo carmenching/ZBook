@@ -12,10 +12,18 @@ if(isset($_POST['submit'])) {
         $fetch->execute();
         $result=$fetch->get_result();
         while ($user = $result->fetch_assoc()) {
-            echo $user['PseudoUser'];
+            $_SESSION['username'] = $user['PseudoUser'];
+            $userPassword = $user['PasswordUser'];
         }
     }
     $mysqli->close();
 }
 
+if(empty($_SESSION['username'])) {
+    echo "username does not exist";
+}
+
+if(!password_verify($password, $userPassword)) {
+    echo "password incorrect!";
+}
 
