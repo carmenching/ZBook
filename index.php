@@ -2,6 +2,10 @@
 require('config/DBCNX.php');
 include 'template/header.html';
 
+session_start();
+if(empty($_SESSION['username'])) {
+	header('Location: http://localhost/login.php');
+} 
 ?>
 
 <!-- contient la page en elle même, timeline + barre latérale, .... -->
