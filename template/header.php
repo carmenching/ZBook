@@ -18,6 +18,9 @@
     				<input type="text" class="searchTerm" placeholder="Rechercher ...">
     				<button type="submit" class="searchButton"></button>
         		</div>
-        	</li>
+			</li>
+			<li>
+				<a href="#"><?php echo $_SESSION['username'] ?></a>
+			</li>
 		</ul>
 	</div>

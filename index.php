@@ -1,8 +1,9 @@
 <?php
 require('config/DBCNX.php');
-include 'template/header.html';
 
+// recuperer la session d'utilisateur et injecter l'info sur header
 session_start();
+include 'template/header.php';
 
 if(empty($_SESSION['username'])) {
 	header('Location: http://localhost/zbook/login.php');
