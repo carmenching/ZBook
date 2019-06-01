@@ -15,7 +15,7 @@
      <input type="password" name="repass" placeholder="Confirmez mot de passe"><br><br>   
      <input type="email" name="mail" placeholder="Adresse mail"><br><br>
      <input type="date" name="dob" placeholder="Date de naissance"><br><br>
-     <input type="submit" value="Inscription"><br><br>
+     <input type="submit" value="Inscription" name="submit"><br><br>
     </form>
  </div>
 </body>

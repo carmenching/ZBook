@@ -3,8 +3,9 @@ require('config/DBCNX.php');
 include 'template/header.html';
 
 session_start();
+
 if(empty($_SESSION['username'])) {
-	header('Location: http://localhost/login.php');
+	header('Location: http://localhost/zbook/login.php');
 } 
 ?>
 
