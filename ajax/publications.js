@@ -22,7 +22,7 @@ $('a.likePost').bind(function(e) {
         url: url,
         data: {},
         success: function(data) {
-
+            
         }
     });
     return false;

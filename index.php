@@ -40,19 +40,24 @@ if(empty($_SESSION['username'])) {
 
 <?php
 		// recuperer tous les posts depuis la bdd
-		$querySearch = "SELECT post.IDPost, user.FirstNameUser, user.LastNameUser, post.DatePost, post.ContentPost FROM post, user WHERE user.IDUser = post.IDUser ORDER BY post.DatePost DESC";
-		if ($fetch = $mysqli->query($querySearch)) {
-			while ($post = $fetch->fetch_assoc()) {
-				echo 
-				"<article class=\"fullpost\">
-				<p><a href=\"\">".$post['FirstNameUser']." ".$post['LastNameUser']."</a><small>".$post['DatePost']."</small></p>
-				<p class=\"postcontent\">" . $post['ContentPost'] . "</p>
-				<a class=\"likePost\" href=\"publications_like.php/?like=". $post['IDPost']."\"><img src=\"img/like.png\" alt=\"like icon\" style=\"width:20px\"></a>
-				<p class=\"likeCount\"></p>
-				</article>";
-			}
-		}
-		$mysqli->close();
+		$querySearch = "SELECT post.IDPost, user.FirstNameUser, user.LastNameUser, post.DatePost, post.ContentPost, COUNT(post_like.IDPostLike) AS NumberLikes 
+                    FROM post LEFT JOIN post_like ON post_like.IDPost = post.IDPost, user 
+                    WHERE post.IDUser = user.IDUser 
+                    GROUP BY IDPost 
+                    ORDER BY post.DatePost DESC";
+                    
+    if ($fetch = $mysqli->query($querySearch)) {
+        while ($post = $fetch->fetch_assoc()) {
+            echo 
+            "<article class=\"fullpost\">
+            <p><a href=\"\">".$post['FirstNameUser']." ".$post['LastNameUser']."</a><small>".$post['DatePost']."</small></p>
+            <p class=\"postcontent\">" . $post['ContentPost'] . "</p>
+            <a class=\"likePost\" href=\"publications_like.php/?like=". $post['IDPost']."\"><img src=\"img/like.png\" alt=\"like icon\" style=\"width:20px\"></a>
+            <p id =\"postid".$post['IDPost']. "\" class=\"likeCount\">".intval($post['NumberLikes'])."</p>
+            </article>";
+        }
+    }
+    $mysqli->close();
 ?>
 		
 			<!-- <article class="fullpost">

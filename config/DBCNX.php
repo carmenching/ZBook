@@ -12,7 +12,8 @@ $servername = 'localhost';
 $username = 'root';
 $password = '';
 $db = 'zbook';
-
+$rootPath = $_SERVER['DOCUMENT_ROOT']."/zbook/";
+$home = $rootPath."index.php";
 
 // Connexion � la DB
 
