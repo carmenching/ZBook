@@ -13,3 +13,17 @@ $('#submit_post').on('submit', function(e){
     return false;
     
 });
+
+$('a.likePost').bind(function(e) {
+    e.preventDefault();
+    var url = $(this).attr('href');
+    $;ajax({
+        type:"GET",
+        url: url,
+        data: {},
+        success: function(data) {
+
+        }
+    });
+    return false;
+});

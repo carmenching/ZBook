@@ -16,7 +16,7 @@ if(empty($_SESSION['username'])) {
 	<!-- Barre latérale gauche -->
 	<div class="sidebar">
 		<ul id="LEFTBAR">
-			<li class="sidebarlink"><a href="">PROFIL</a></li>
+			<li class="sidebarlink"><?php echo"<a href=\"profile.php?user=".$_SESSION['username']."\">PROFIL</a>"?></li>
 			<li class="sidebarlink"><a href="">CHAT</a></li>
 			<li class="sidebarlink"><a href="">AMIS</a></li>
 		</ul>
@@ -36,16 +36,20 @@ if(empty($_SESSION['username'])) {
 		
 		<!-- la timeline en elle même -->
 		<div id="TIMELINE">
-
 			<!-- ceci est un type post: -->
 
 <?php
 		// recuperer tous les posts depuis la bdd
-		if ($fetch = $mysqli->query("SELECT DatePost, ContentPost FROM POST ORDER BY DatePost DESC")) {
+		$querySearch = "SELECT post.IDPost, user.FirstNameUser, user.LastNameUser, post.DatePost, post.ContentPost FROM post, user WHERE user.IDUser = post.IDUser ORDER BY post.DatePost DESC";
+		if ($fetch = $mysqli->query($querySearch)) {
 			while ($post = $fetch->fetch_assoc()) {
-				echo "<article class=\"fullpost\">
-				<p><a href=\"\">Robert Roger</a><small>".$post['DatePost']."</small></p>
-				<p class=\"postcontent\">" . $post['ContentPost'] . "</p></article>";
+				echo 
+				"<article class=\"fullpost\">
+				<p><a href=\"\">".$post['FirstNameUser']." ".$post['LastNameUser']."</a><small>".$post['DatePost']."</small></p>
+				<p class=\"postcontent\">" . $post['ContentPost'] . "</p>
+				<a class=\"likePost\" href=\"publications_like.php/?like=". $post['IDPost']."\"><img src=\"img/like.png\" alt=\"like icon\" style=\"width:20px\"></a>
+				<p class=\"likeCount\"></p>
+				</article>";
 			}
 		}
 		$mysqli->close();
