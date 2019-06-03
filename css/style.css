@@ -1,3 +1,5 @@
+/* general */
+
 html, body {
   width: 100%;
 }
@@ -124,6 +126,8 @@ input[search] {
 #FULLMESSAGEFEED {
 		width: 68%;
 }
+
+/* classes */
 
 .messagegroup {
 	margin: 40px;
