@@ -1,11 +1,11 @@
 <?php
+require('config/msgquery.php');
+?>
+<?php
 require('config/DBCNX.php');
 require ('headerpreset.html');
 ?>
 
-<?php
-require('config/msgquery.php');
-?>
 
 <!-- contient la page en elle même, timeline + barre latérale, .... -->
 <div id="FULLPAGE" class="row">	
