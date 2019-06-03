@@ -1,30 +1,40 @@
 <?php
-//Connexion à la BDD
-//Récupérer les données de connexions
-$servername = '185.98.131.90';
-$username = 'breto1088830_2spl7';
-$password = '7yng5velfj';
-$db = 'breto1088830_2spl7';
+//Paramètres de connexion à la BDD
+//$servername = '9883e481-c82d-46c5-b38a-fc00215f3a9c.zbooklike-4405.mysql.dbs.scalingo.com:32235';
+//$username = 'zbooklike_4405';
+//$password = 'bzDPCikzVTgmw1hmv1Tn';
+//$db = 'zbooklike_4405';
+
+//Connexion test au localhost
+//$servername = 'localhost';
+//$username = 'root';
+//$password = '';
+//$db = 'zbook';
 
 // Connexion à la DB
-$conn = new mysqli($servername, $db, $username, $password);
+try{
+	$conn = new mysqli($servername, $username, $password, $db);
+	//echo "Connexion réussie !";
+	//Variables pour ajouter un utilisateur
+	$Lastname = htmlspecialchars(trim($_POST['lastname']));
+	$Firstname = htmlspecialchars(trim($_POST['firstname']));
+	$Pseudo = htmlspecialchars(trim($_POST['pseudonyme']));
+	$Password = htmlspecialchars(trim($_POST['pass1']));
+	$Email = htmlspecialchars(trim($_POST['mail']));
+	$Birthdate = htmlspecialchars(trim($_POST['birthdate']));
 
-//Checker que la connexion fonctionne
-if ($cnx->cnx_error){
-	die("Impossible de se connecter" . $connection->connect_error);
+	$rqsql ="INSERT INTO USER VALUES ('', '$Lastname', '$Firstname', '$Pseudo',	'$Password', '$Email', '$Birthdate')";
+
+
+	//On ajoute l'utilisateur à la BDD
+	$res = $conn->query($rqsql);
+
+	//Message de confirmation de création de l'utilisateur'
+	echo "USer succesfully created";
+
+}catch (Exception $e){
+	die("Impossible de se connecter" .$e->getMessage);
 }
-echo "Connexion réussie !";
 
-//Ajout d'un utilisateur
-$Lastname;
-$Firstname;
-$Pseudo;
-$Password;
-$Email;
-$Birthdate;
-
-
-
-$res = $mysqli->query("INSERT INTO USER (LastNameUser, FirstNameUser, PseudoUser, PasswordUser, MailUser, BirthDateUser) VALUES ($Lastname, $Firstname, $Pseudo, $ Password, $Email, $Birthdate)";
 
 ?>
