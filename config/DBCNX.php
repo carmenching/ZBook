@@ -12,7 +12,8 @@ $servername = 'localhost';
 $username = 'root';
 $password = '';
 $db = 'zbook';
-
+$rootPath = $_SERVER['DOCUMENT_ROOT']."/zbook/";
+$home = $rootPath."index.php";
 
 // Connexion � la DB
 
@@ -21,6 +22,7 @@ $mysqli = new mysqli($servername, $username, $password, $db);
 if ($mysqli->connect_errno) {
     echo "Echec lors de la connexion à MySQL : (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
+
 
 
 ?>
