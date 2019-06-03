@@ -1,61 +1,45 @@
 <?php
 require('config/DBCNX.php');
-
+require ('headerpreset.html');
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title> ZBook - Accueil </title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-<body>
-
-<!-- barre du haut, contiendra logo, shearchbar etc -->
-<div id="TOPBAR">
-	<ul id="TOPBARLIST">
-		<li><a href="index.html"><img src="img/mainlogo.png" id="LOGO"></a></li>
-		<li>
-			<div class="search">
-				<input type="text" class="searchTerm" placeholder="Rechercher ...">
-				<button type="submit" class="searchButton"></button>
-    		</div>
-    	</li>
-	</ul>
-</div>
 
 <!-- contient la page en elle même, timeline + barre latérale, .... -->
-<div id="FULLPAGE">
+<div id="FULLPAGE" class="row">	
 
-	<!-- section des amis -->
-	<div class="sidebar">
-		<!-- liste des gens -->
-		<ul id="LEFTBAR">
-			<li class="sidebarlink">
-				<a href="" class="imgplustext">
-					<img src="img/buttonfriends.png" class="pponlist"> 
-					<p>CARLO</p>
-				</a>
-			</li>
-		</ul>
+	<!-- Barre latérale gauche -->
+	<div class="void col-0 col-sm-1 col-md-2">
 	</div>
 
-	<!-- section messagerie -->
-	<div id="FULLMESSAGEFEED">
-		<div class="messagegroup">
-			<p class="dudewriting">ROBERT</p>
-			<div class="message" class="receivedmessage">
-				<p>sexe</p>
-			</div>
-			<div class="message" class="receivedmessage">
-				<p>je suis pour le concubinage</p>
-			</div>
+	<!-- contient la division centrale de la page (timeline + module de publication) -->
+	<div id="MIDDLE" class="col-12 col-sm-10 col-md-8">
+		<?php print ( empty($messages) ) ? '<p id="nopost">Aucun message !</p>' :''; ?>
+		<div id="messagerie">
+			<?php ?>
+			<form action="messagerie.php">
+				<label for="auteur">Auteur :</label><input type="text" id="auteur" size="20" />
+				<label for="corps">Message :</label><textarea id="corps" cols="30" rows="7"></textarea>
+				<input type="submit" value="Envoyer" />
+			</form>
 		</div>
-		<div class="messagegroup">
-			<p class="dudewriting">MOI</p>
-			<div class="message" class="sentmessage">
-				<p>oh oui faisons ça!</p>
-			</div>
+		<div id="messages">
+			<?php
+			foreach($messages as $message) {
+				printMessage($message);
+			}
+			?>
 		</div>
 	</div>
 
+	<!-- Barre latérale de menu -->
+	<div class="void col-0 col-sm-1 col-md-2">
+	</div>
 </div>
+
+<div class="spacer"></div>
+
+<?php
+require('footerpreset.html');
+?>
+
+</body>
+</html>

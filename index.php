@@ -26,7 +26,7 @@ require('headerpreset.html');
 				</div>
 				<div class="row">
 					<img src="" class="col-1">
-					<textarea class="form-control col-10" rows="4"></textarea>
+					<input type='text' class="form-control col-10" rows="4"></input>
 					<div class="col-1"><div class="row"><input type="image" class="col-12" src="img/buttonmessage.png" id="BUTTONPUB" style="width: 40px; height: 40px;"></input></div></div>
 				</div>
 				<div class="lilspacer row"></div>

@@ -1,6 +1,3 @@
-<?php
-require('config/DBCNX.php');
-?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -18,27 +15,26 @@ require('config/DBCNX.php');
  <![endif]-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-
 </head>
 <body>
 
 <header class="" id="fulltop">
 	<div class="row align-items-center" id="TOPTOPBAR">
-		<a href="index.php" class="col-2"><img src='img/mainlogo.png' id="LOGO" class=""></a>
+		<a href="index.php" class="col-2"><img src="img/mainlogo.png" id="LOGO" class="" alt="logo"></a>
 		<h1 class="col-3 offset-lg-7 offset-md-7 offset-sm-6 offset-2">ZBooK</h1>
 	</div>
 	<div class="sticky-top">
 		<div class="row align-items-center" id="BACKTOPBAR">
 			<div class="col-lg-4 col-md-5 col-sm-8 col-12">
 				<div class="row">
-					<a href="" class="col-4 navitem"><img src="img/buttonprofile.png" class="col-12 sidebarlink">PROFIL</a>
-					<a href="messagerie.php" class="col-4 navitem"><img src="img/buttonmessage.png" class="col-12 sidebarlink">MESSAGERIE</a>
-					<a href="" class="col-4 navitem"><img src="img/buttonfriends.png" class="col-12 sidebarlink">AMIS</a>
+					<a href="" class="col-4 navitem"><img src="img/buttonprofile.png" class="col-12 sidebarlink" alt="PROFIL"></a>
+					<a href="messagerie.php" class="col-4 navitem"><img src="img/buttonmessage.png" class="col-12 sidebarlink" alt="MESSAGERIE"></a>
+					<a href="" class="col-4 navitem"><img src="img/buttonfriends.png" class="col-12 sidebarlink" alt="AMIS"></a>
 				</div>
 			</div>
+			<div class="offset-lg-5 offset-md-4 offset-sm-0 col-md-3 col-sm-4">
+				<input type="text" class="form-control">
+			</div>
 		</div>	
-		<div class="offset-lg-5 offset-md-4 offset-sm-0 col-md-3 col-sm-4">
-			<input type="text" class="form-control">
-		</div>
 	</div>
 </header>
