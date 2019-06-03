@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="utf-8">
+    <title> ZBook - Accueil </title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.grid.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--[if lt IE 9]>
+     <script
+    src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+ <![endif]-->
+
+   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="row spacer"></div>
+    <div class="row">
+        <div class="col-0 col-sm-1 col-md-2"></div>
+        <div class="signup col-12 col-sm-10 col-md-8">
+			<div class="row">
+            <form action="/Create_Account.php" method="post" class="col-12">
+				<div class="row">
+					<div class="col-2"></div>
+					<div class="col-8" id="INSCRIPTIONCENTER">
+						<h2 class="row inscriptionitem text-center">Créer un compte</h2>
+						<input type="text" name="lastname" placeholder="Nom" class="row inscriptionitem form-control text-center offset-1 col-10 lilvoid">
+						<input type="text" name="firstname" placeholder="Prénom" class="row inscriptionitem form-control text-center offset-1 col-10">
+						<input type="text" name="pseudonyme" placeholder="Pseudo" class="row inscriptionitem form-control text-center offset-1 col-10">
+						<input type="password" name="pass1" placeholder="Mot de passe" class="row inscriptionitem form-control text-center offset-1 col-10">
+						<input type="password" name="pass2" placeholder="Confirmez mot de passe" class="row inscriptionitem form-control text-center offset-1 col-10">
+						<input type="email" name="mail" placeholder="Adresse mail" class="row inscriptionitem form-control text-center offset-1 col-10">
+						<input type="date" name="birthdate" placeholder="Date de naissance" class="row inscriptionitem form-control text-center offset-1 col-10">
+						<a href="connexion.php" class="row text-center"><p class="col-12">Vous avez déjà un compte ? Connectez-vous !</p></a>
+						<input type="submit" name="submit" value="Inscription" class="row inscriptionitem offset-4 col-4">
+					</div>
+					<div class="col-2"></div>
+				</div>
+            </form>
+			</div>
+        </div>  
+        <div class="col-0 col-sm-1 col-md-2"></div>      
+    </div>
+</div>
+</body>
+</html>

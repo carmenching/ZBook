@@ -9,8 +9,16 @@
 
 // <--------local server---------->
 $servername = 'localhost';
+<<<<<<< HEAD
 $username = 'root';
 $password = '';
+=======
+
+$username = 'root';
+
+$password = '';
+
+>>>>>>> 63432f4830dc209e9e68c83aac0f46c765468c68
 $db = 'zbook';
 $rootPath = $_SERVER['DOCUMENT_ROOT']."/zbook/";
 $home = $rootPath."index.php";

@@ -18,7 +18,6 @@ if(empty($_SESSION['username'])) {
 
 	<!-- Barre latérale gauche -->
 	<div class="void col-0 col-sm-1 col-md-2">
-
 	</div>
 
 	<!-- contient la division centrale de la page (timeline + module de publication) -->
@@ -68,10 +67,10 @@ if(empty($_SESSION['username'])) {
     $mysqli->close();
 ?>
 		
-			<!-- <article class="fullpost">
+			<article class="fullpost">
 				<p><a href="">Robert Roger</a></p>
 				<p class="postcontent">J'ai mangé un ananas ce midi, c'était bon putain! j'aime me mettre des concombres dans les oreilles en pensant à ta mère. Je crois bien que je vis ma meilleure vie. #CACTUS</p>
-			</article> -->
+			</article>
 
 		</div>
 	</div>
