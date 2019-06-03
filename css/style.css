@@ -68,8 +68,8 @@ input[search] {
 		align-items: center;
 	}
 		#LOGO{
-			max-height: 80px;
-			max-width: auto;
+			height: 40px;
+			width: 40px;
 		}
 
 
@@ -85,12 +85,21 @@ input[search] {
 		
 	}
 
+		#POSTTOPTEXT {
+			font-weight: bold;
+		}
+
 		#PUBLISHER {
 			background-color: #2D2A32;
 			color: white;
 			line-height: 0.2;
 			padding-top: 5px;
 			padding-bottom: 5px;
+		}
+
+		#BUTTONPUB {
+			height: 40px !important;
+			width: 40px !important;
 		}
 
 		#TIMELINE {

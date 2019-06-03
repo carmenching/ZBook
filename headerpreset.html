@@ -9,7 +9,6 @@ require('config/DBCNX.php');
 	<meta charset="utf-8">
 	<title> ZBook - Accueil </title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.grid.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<!--[if lt IE 9]>
@@ -18,32 +17,26 @@ require('config/DBCNX.php');
 	 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
  <![endif]-->
 
-   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-  <script type="text/javascript" src="js/sticky/jquery.sticky.js"></script>
-  <script>
-    $(window).load(function(){
-      $("#BACKTOPBAR").sticky({ topSpacing: 0 });
-    });
-  </script>
-
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <body>
 
-<header class="container" id="fulltop">
+<header class="" id="fulltop">
 	<div class="row align-items-center" id="TOPTOPBAR">
 		<a href="index.php" class="col-2"><img src='img/mainlogo.png' id="LOGO" class=""></a>
 		<h1 class="col-3 offset-lg-7 offset-md-7 offset-sm-6 offset-2">ZBooK</h1>
 	</div>
-	<div class="row align-items-center" id="BACKTOPBAR">
-		<div class="col-lg-4 col-md-5 col-sm-8 col-12">
-			<div class="row">
-				<a href="" class="col-4"><img src="img/buttonprofile.png" class="col-12 sidebarlink"></a>
-				<a href="" class="col-4"><img src="img/buttonmessage.png" class="col-12 sidebarlink"></a>
-				<a href="" class="col-4"><img src="img/buttonfriends.png" class="col-12 sidebarlink"></a>
+	<div class="sticky-top">
+		<div class="row align-items-center" id="BACKTOPBAR">
+			<div class="col-lg-4 col-md-5 col-sm-8 col-12">
+				<div class="row">
+					<a href="" class="col-4 navitem"><img src="img/buttonprofile.png" class="col-12 sidebarlink">PROFIL</a>
+					<a href="messagerie.php" class="col-4 navitem"><img src="img/buttonmessage.png" class="col-12 sidebarlink">MESSAGERIE</a>
+					<a href="" class="col-4 navitem"><img src="img/buttonfriends.png" class="col-12 sidebarlink">AMIS</a>
+				</div>
 			</div>
-		</div>
+		</div>	
 		<div class="offset-lg-5 offset-md-4 offset-sm-0 col-md-3 col-sm-4">
 			<input type="text" class="form-control">
 		</div>
