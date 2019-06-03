@@ -4,7 +4,7 @@
             var corps = $('#messagerie #corps').val();
             $.ajax({
                 type: "POST",
-                url: "Testajax.php",
+                url: "messagerie.php",
                 data: 'auteur=' + auteur + '&corps=' + corps,
                 success: function(data) {
                     $('#messages').prepend(data);

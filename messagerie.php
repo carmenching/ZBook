@@ -3,6 +3,10 @@ require('config/DBCNX.php');
 require ('headerpreset.html');
 ?>
 
+<?php
+require('config/msgquery.php');
+?>
+
 <!-- contient la page en elle même, timeline + barre latérale, .... -->
 <div id="FULLPAGE" class="row">	
 
@@ -12,6 +16,7 @@ require ('headerpreset.html');
 
 	<!-- contient la division centrale de la page (timeline + module de publication) -->
 	<div id="MIDDLE" class="col-12 col-sm-10 col-md-8">
+		<script type="text/javascript" src="js/main.js"></script>
 		<?php print ( empty($messages) ) ? '<p id="nopost">Aucun message !</p>' :''; ?>
 		<div id="messagerie">
 			<?php ?>
