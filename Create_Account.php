@@ -1,9 +1,9 @@
 <?php
 //Paramètres de connexion à la BDD
-//$servername = '9883e481-c82d-46c5-b38a-fc00215f3a9c.zbooklike-4405.mysql.dbs.scalingo.com:32235';
-//$username = 'zbooklike_4405';
-//$password = 'bzDPCikzVTgmw1hmv1Tn';
-//$db = 'zbooklike_4405';
+$servername = '9883e481-c82d-46c5-b38a-fc00215f3a9c.zbooklike-4405.mysql.dbs.scalingo.com:32235';
+$username = 'zbooklike_4405';
+$password = 'bzDPCikzVTgmw1hmv1Tn';
+$db = 'zbooklike_4405';
 
 //Connexion test au localhost
 //$servername = 'localhost';
@@ -30,7 +30,7 @@ try{
 	$res = $conn->query($rqsql);
 
 	//Message de confirmation de création de l'utilisateur'
-	echo "USer succesfully created";
+	//echo "USer succesfully created";
 
 }catch (Exception $e){
 	die("Impossible de se connecter" .$e->getMessage);
