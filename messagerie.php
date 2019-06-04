@@ -3,7 +3,7 @@ require('config/msgquery.php');
 ?>
 <?php
 require('config/DBCNX.php');
-require ('headerpreset.php');
+require ('template/headerpreset.php');
 ?>
 
 
@@ -43,7 +43,7 @@ require ('headerpreset.php');
 <div class="spacer"></div>
 
 <?php
-require('footerpreset.php');
+require('template/footerpreset.php');
 ?>
 
 </body>

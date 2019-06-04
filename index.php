@@ -4,16 +4,10 @@ require('config/DBCNX.php');
 // recuperer la session d'utilisateur et injecter l'info sur header
 session_start();
 include 'template/header.php';
-<<<<<<< HEAD
-require('headerpreset.php');
+require('template/headerpreset.php');
 
 if(empty($_SESSION['username'])) {
 	header('Location: login.php');
-=======
-
-if(empty($_SESSION['username'])) {
-	header('Location: http://localhost/zbook/login.php');
->>>>>>> ac4eeb8eae8da0dd1c8435ecc4f1560dba7416e8
 } 
 ?>
 
@@ -23,16 +17,7 @@ if(empty($_SESSION['username'])) {
 <div id="FULLPAGE" class="row">	
 
 	<!-- Barre latérale gauche -->
-<<<<<<< HEAD
 	<div class="void col-0 col-sm-1 col-md-2">
-=======
-	<div class="sidebar">
-		<ul id="LEFTBAR">
-			<li class="sidebarlink"><?php echo"<a href=\"profile.php?user=".$_SESSION['username']."\">PROFIL</a>"?></li>
-			<li class="sidebarlink"><a href="">CHAT</a></li>
-			<li class="sidebarlink"><a href="">AMIS</a></li>
-		</ul>
->>>>>>> ac4eeb8eae8da0dd1c8435ecc4f1560dba7416e8
 	</div>
 
 	<!-- contient la division centrale de la page (timeline + module de publication) -->
@@ -100,7 +85,7 @@ if(empty($_SESSION['username'])) {
 <div class="spacer"></div>
 
 <?php
-require('footerpreset.php');
+require('template/footerpreset.php');
 ?>
 </body>
 </html>
