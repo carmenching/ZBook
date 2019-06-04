@@ -33,12 +33,12 @@ if(isset($_POST['submit'])) {
     }
 
     if(empty($password)) {
-        echo "identifiant ne peut pas être vide";
+        echo "mot de passe ne peut pas être vide";
         $validate = false;
     }
 
     if(empty($repeatPassword)) {
-        echo "identifiant ne peut pas être vide";
+        echo "mot de passe ne peut pas être vide";
         $validate = false;
     }
 
@@ -47,7 +47,7 @@ if(isset($_POST['submit'])) {
     }
 
     if(empty($mail)) {
-        echo "identifiant ne peut pas être vide";
+        echo "l'adresse mail ne peut pas être vide";
         $validate = false;
     }
 
