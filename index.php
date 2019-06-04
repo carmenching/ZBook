@@ -3,7 +3,6 @@ require('config/DBCNX.php');
 
 // recuperer la session d'utilisateur et injecter l'info sur header
 session_start();
-include 'template/header.php';
 require('template/headerpreset.php');
 
 if(empty($_SESSION['username'])) {
@@ -34,8 +33,9 @@ if(empty($_SESSION['username'])) {
 	</div>
 	<div class="row">
 		<img src="" class="col-1">
-		<input type='text' class="form-control col-10" rows="4" name="postContent" id="postContent"></input>
-		<div class="col-1"><div class="row"><input type="submit" valeur="Send" class="col-12" src="img/buttonmessage.png" id="BUTTONPUB" style="width: 40px; height: 40px;"></input></div></div>
+		<input type='text' class="form-control col-10" rows="4" name="postContent" id="postContent">
+		<div class="col-1"><div class="row"><input type="submit" valeur="Send" class="col-12" src="img/buttonmessage.png" id="BUTTONPUB" style="width: 40px; height: 40px;">
+		</div></div>
 	</div>
 	<div class="lilspacer row"></div>
 			</form>
