@@ -17,7 +17,7 @@
          Pas encore de compte? <a href="Inscription.html" style="font-family:'Play', sans-serif;">Inscrivez-vous ici</a>
          </form>
       </div>
-      <script scr="main.js"></script>
+      <script scr="js/main.js"></script>
     </body>
  </html>
 
