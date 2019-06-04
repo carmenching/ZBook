@@ -43,7 +43,7 @@ require ('headerpreset.php');
 <div class="spacer"></div>
 
 <?php
-require('footerpreset.html');
+require('footerpreset.php');
 ?>
 
 </body>

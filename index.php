@@ -100,7 +100,7 @@ if(empty($_SESSION['username'])) {
 <div class="spacer"></div>
 
 <?php
-require('footerpreset.html');
+require('footerpreset.php');
 ?>
 </body>
 </html>
