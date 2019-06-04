@@ -37,12 +37,12 @@ if(isset($_POST['submit'])) {
         $validate = false;
     }
 
-    if(empty($repeatPassword)) {
+    if(empty($psw)) {
         echo "mot de passe ne peut pas être vide";
         $validate = false;
     }
 
-    if($password != $repeatPassword) {
+    if($password != $psw) {
         echo "les mots de passe saisi ne sont pas les mêmes";
     }
 
