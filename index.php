@@ -4,7 +4,7 @@ require('config/DBCNX.php');
 // recuperer la session d'utilisateur et injecter l'info sur header
 session_start();
 include 'template/header.php';
-require('headerpreset.html');
+require('headerpreset.php');
 
 if(empty($_SESSION['username'])) {
 	header('Location: login.php');

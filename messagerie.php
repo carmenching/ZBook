@@ -3,7 +3,7 @@ require('config/msgquery.php');
 ?>
 <?php
 require('config/DBCNX.php');
-require ('headerpreset.html');
+require ('headerpreset.php');
 ?>
 
 
