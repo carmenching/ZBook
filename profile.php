@@ -1,15 +1,13 @@
 <?php
 require('config/DBCNX.php');
 session_start();
-include 'template/header.php';
-
-
+include 'template/headerpreset.php';
 
 if(isset($_SESSION['username'])) {
     $currentUser = $_SESSION['username'];
     $userQuery = "SELECT LastNameUser, FirstNameUser, PseudoUser, MailUser, BirthDateUser FROM user WHERE PseudoUser =?";
     if($fetchUser = $mysqli->prepare($userQuery)) {
-        $fetchUser->bind_param("s", $username);
+        $fetchUser->bind_param("s", $currentUser);
         $fetchUser->execute();
         $result=$fetchUser->get_result();
         while($user = $result->fetch_assoc()) {
@@ -21,11 +19,20 @@ if(isset($_SESSION['username'])) {
         }
     }
 }
+
 ?>
     <div class="container">
-        <div>
-            <img src="https://dummyimage.com/1080x400/000/fff" alt="">
-            <img src="">
+        <div id="userProfile">
+            <h2><?= $currentUsername; ?></h2>
+            <div id="profileDetails">
+                <p>Prénom                 : <?= $currentUserFirstName ?></p>
+                <p>Nom                    : <?= $currentUserLastName ?></p>
+                <p>Email                  : <?= $currentUserLastName ?></p>
+                <p>Date de Naissance      : <?= $currentUserLastName ?></p>
+            </div>
+            <div>
+            <h3>Amis</h3>
+            </div>
         </div>
         
     </div>
