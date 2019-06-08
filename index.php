@@ -3,7 +3,7 @@ require('config/DBCNX.php');
 
 // recuperer la session d'utilisateur et injecter l'info sur header
 session_start();
-require('template/headerpreset.php');
+include 'template/headerpreset.php';
 
 if(empty($_SESSION['username'])) {
 	header('Location: login.php');
@@ -85,7 +85,7 @@ if(empty($_SESSION['username'])) {
 <div class="spacer"></div>
 
 <?php
-require('template/footerpreset.php');
+include 'template/footerpreset.php';
 ?>
 </body>
 </html>
