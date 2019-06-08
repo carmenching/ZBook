@@ -25,10 +25,10 @@
 		<div class="row align-items-center" id="BACKTOPBAR">
 			<div class="col-lg-4 col-md-5 col-sm-8 col-12">
 				<div class="row">
-
-					<?php echo "<a href=\"profile.php?user=".$_SESSION['username']."class=\"col-4 navitem text-center\"><img src=\"img/buttonprofile.png\" class=\"col-12 sidebarlink\" alt=\"PROFIL\"></a>";?>  
+					<?php echo "<a href=\"profile.php?user=".$_SESSION['username']."class=\"col-4 navitem text-center\"><img src=\"img/buttonprofile.png\" class=\"col-12 sidebarlink\" alt=\"PROFIL\">".$_SESSION['username']."</a>";?>  
 					<a href="messagerie.php" class="col-4 navitem text-center"><img src="img/buttonmessage.png" class="col-12 sidebarlink" alt="MESSAGERIE"></a>
 					<a href="" class="col-4 navitem text-center"><img src="img/buttonfriends.png" class="col-12 sidebarlink" alt="AMIS"></a>
+					<a href="login.php" class="navitem text-center">Disconnect</a>
 				</div>
 			</div>
 		</div>	

@@ -11,7 +11,7 @@ if(isset($_POST['submit'])) {
     $firstname = htmlspecialchars(trim($_POST['firstname'])); 
     $lastname = htmlspecialchars(trim($_POST['lastname'])); 
     $password = htmlspecialchars(trim($_POST['password'])); 
-    $repeatPassword = htmlspecialchars(trim($_POST['repass'])); 
+    $repeatPassword = htmlspecialchars(trim($_POST['psw'])); 
     $hash = password_hash($password, PASSWORD_DEFAULT);
     $mail = htmlspecialchars(trim($_POST['mail'])); 
     $dob = htmlspecialchars(trim(strtotime($_POST['dob'])));

@@ -2,16 +2,14 @@
 require('config/DBCNX.php');
 
 // recuperer tous les données envoyés par le formulaire inscription utilisateur
-
-
 // ----verifier tous les données envoyés et si les champs sont vides. ---------
 // debut
 if(isset($_POST['submit'])) { 
-    $username = htmlspecialchars(trim($_POST['pseudonyme'])); 
+    $username = htmlspecialchars(trim($_POST['username'])); 
     $firstname = htmlspecialchars(trim($_POST['firstname'])); 
     $lastname = htmlspecialchars(trim($_POST['lastname'])); 
-    $password = htmlspecialchars(trim($_POST['password'])); 
-    $repeatPassword = htmlspecialchars(trim($_POST['repass'])); 
+    $password = htmlspecialchars($_POST['password']); 
+    $psw = htmlspecialchars($_POST['psw']); 
     $hash = password_hash($password, PASSWORD_DEFAULT);
     $mail = htmlspecialchars(trim($_POST['mail'])); 
     $dob = htmlspecialchars(trim(strtotime($_POST['dob'])));
@@ -68,7 +66,10 @@ if ($validate) {
        
         $subscribe->bind_param($format, $lastname, $firstname ,$username, $hash, $mail, $dateDeNaissance);
         $subscribe->execute();
-        echo "user added";
+        echo "l'utilisateur ajoutée, vous serez redirigé vers la page de connexion";
     };
-    $subscribe->close();
+	$subscribe->close();
+	header("refresh:5; url=http://localhost/zbook/login.php");
+
 }
+
