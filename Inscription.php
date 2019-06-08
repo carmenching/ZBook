@@ -9,7 +9,7 @@
 
 <body>  
    <div class="signup">
-    <form action="new_inscription.php" method="POST" id="inscription_form">
+    <form action="Create_Account.php" method="POST" id="inscription_form">
      <h2 style="color: #fff;">Créer un compte</h2>
      <input type="pseudo" name="username" placeholder="Pseudo"><br><br>
      <input type="text" name="firstname" placeholder="Prenom"><br><br>

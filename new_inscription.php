@@ -7,14 +7,14 @@ require('config/DBCNX.php');
 // ----verifier tous les données envoyés et si les champs sont vides. ---------
 // debut
 if(isset($_POST['submit'])) { 
-    $username = $_POST['username']; 
-    $firstname = $_POST['firstname']; 
-    $lastname = $_POST['lastname']; 
-    $password = $_POST['password']; 
-    $repeatPassword = $_POST['repass']; 
+    $username = htmlspecialchars(trim($_POST['pseudonyme'])); 
+    $firstname = htmlspecialchars(trim($_POST['firstname'])); 
+    $lastname = htmlspecialchars(trim($_POST['lastname'])); 
+    $password = htmlspecialchars(trim($_POST['password'])); 
+    $repeatPassword = htmlspecialchars(trim($_POST['repass'])); 
     $hash = password_hash($password, PASSWORD_DEFAULT);
-    $mail = $_POST['mail']; 
-    $dob = strtotime($_POST['dob']);
+    $mail = htmlspecialchars(trim($_POST['mail'])); 
+    $dob = htmlspecialchars(trim(strtotime($_POST['dob'])));
     $validate = true;
     
     if(empty($username)) {
