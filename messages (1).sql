@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  Dim 09 juin 2019 à 19:46
+-- Généré le :  Dim 09 juin 2019 à 19:52
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -37,34 +37,6 @@ CREATE TABLE IF NOT EXISTS `messages` (
   PRIMARY KEY (`message_id`),
   KEY `poste` (`poste`)
 ) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `messages`
---
-
-INSERT INTO `messages` (`message_id`, `auteur`, `corps`, `poste`) VALUES
-(16, 'bb', 'cvc', 1559555104),
-(15, 'vx', 'xvx', 1559553852),
-(14, 'hv', 'hvhv', 1559553594),
-(13, 'ih', 'iuiu', 1559550313),
-(12, 'Guillaume', 'tre', 1559550010),
-(11, 'Guillaume', 'saliut', 1559550006),
-(10, 'Guillaume', 'azert', 1559550000),
-(17, 'tf', 'tftf', 1559555632),
-(18, 'tfftf', 'tftfftf', 1559555635),
-(19, 'tfftf', 'tftfftf', 1559555638),
-(20, 'tfftf', 'tftfftf', 1559555639),
-(21, 'tfftf', 'tftfftf', 1559555639),
-(22, 'ihyuy', 'yuyuy', 1559555870),
-(23, 'rtr', 'rtr', 1559556113),
-(24, 'rtr', 'rtr', 1559556114),
-(25, 'rtr', 'rtr', 1559556114),
-(26, 'rtr', 'rtr', 1559556114),
-(27, 'rtr', 'rtr', 1559556115),
-(28, 'rtr', 'rtr', 1559556115),
-(29, 'trt', 'rtr', 1559556129),
-(30, 'trt', 'rtr', 1559556130),
-(31, 'trt', 'rtr', 1559556130);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
