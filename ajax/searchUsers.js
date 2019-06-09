@@ -1,12 +1,18 @@
-$('#userSearch').on('submit', function(e) {
-    e.preventDefault();
-    var searchUserName = $('#searchUserName').val()
-    $.ajax({
-        type: "POST",
-        url: 'searchList.php',
-        data: { searchUserName: searchUserName },
-        success: function(data) {
-            $('#userList').prepend(data);
+$(document).ready(function() {
+    $('#searchUserName').keyup(function() {
+        var searchUserName = $(this).val();
+        if (searchUserName != '') {
+            $.ajax({
+                url: "searchList.php",
+                method: "POST",
+                data: { searchUserName: searchUserName },
+                success: function(data) {
+                    $('#usersList').removeClass("hiddenwithouthover");
+                    $('#usersList').html(data);
+                    console.log(data);
+                }
+            });
+            return false;
         }
-    })
+    });
 });

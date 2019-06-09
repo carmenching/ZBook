@@ -1,0 +1,75 @@
+body {
+    max-width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Quicksand;
+}
+nav, .logo_search {
+    display: flex;
+}
+#talkpile_logo {
+    margin-right: 15px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 10px 15%;
+    background-color: #47555e;
+    color: #b8aaa1;
+    line-height: 1.5;
+}
+.main {
+    margin: 0 15%;
+    border-left: solid 1px grey;
+    border-right: solid 1px grey;
+    display: flex;
+    min-height: 100vh;
+}
+aside {
+    width: 29%;
+    border-right: solid 1px grey;
+}
+#messages_panel {
+    width: 100%;
+}
+.user_tab {
+    display: flex;
+    height: 60px;
+}
+li {
+    margin-right: 15px;
+}
+#chat_header {
+    background: grey;
+}
+#destined_user {
+    margin: 0;
+    padding: 20px 0 20px 15px;
+    color: white;
+    font-weight: normal;
+    font-size: 1.3em;
+}
+.message_sent {
+    display: flex;
+}
+.avatar_block {
+    width: 40px;
+    padding: 15px;
+}
+.message_display {
+    line-height: 1.3;
+    background: pink;
+    border-radius: 15px;
+    padding: 9px;
+}
+.message_edit{
+    position: fixed;
+    bottom: 0;
+    width: 75%;
+    padding: 15px;
+}
+#message_editor {
+    width: 65%;
+    height: 30px;
+}

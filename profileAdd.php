@@ -13,6 +13,7 @@ if ($send = $mysqli->prepare($friendAdd)) {
     $send->bind_param($format, $friendRequestSender, $typeFriendship, $friend, $requestStatus);
     $send->execute();
     $send->close();
-
 }
 $mysqli->close();
+
+header('Location:http://localhost/zbook/searchUser.php');
