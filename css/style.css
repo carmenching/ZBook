@@ -1,0 +1,220 @@
+/* general */
+
+html,
+body {
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+}
+
+input[search] {}
+
+
+/*colors*/
+
+.bbb {
+    background-color: #2d2a32;
+}
+
+.bb {
+    background-color: #b5d6b2;
+}
+
+.wb {
+    background-color: #fdfefd;
+}
+
+.bcb {
+    background-color: #fffacc;
+}
+
+.bfb {
+    background-color: #ffefbd;
+}
+
+.bbt {
+    color: #2D2A32;
+}
+
+.bt {
+    color: #b5d6b2;
+}
+
+.wt {
+    color: #fdfefd;
+}
+
+.bct {
+    color: #fffacc;
+}
+
+.bft {
+    color: #ffefbd;
+}
+
+
+/*ids*/
+
+#TOPTOPBAR {
+    background-color: #2D2A32;
+    color: #FFEFBD;
+}
+
+#BACKTOPBAR {
+    background-color: #FFEFBD;
+    color: #FFEFBD;
+}
+
+#TOPBARLIST {
+    vertical-align: middle;
+    align-items: center;
+}
+
+#LOGO {
+    height: 40px;
+    width: 40px;
+}
+
+#FULLPAGE {}
+
+#LEFTBAR {}
+
+#MIDDLE {
+    width: 68%;
+}
+
+#POSTTOPTEXT {
+    font-weight: bold;
+}
+
+#PUBLISHER {
+    background-color: #2D2A32;
+    color: white;
+    line-height: 0.2;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#BUTTONPUB {
+    height: 40px !important;
+    width: 40px !important;
+}
+
+#TIMELINE {}
+
+#RIGHTBAR {}
+
+.fullpost {
+    background-color: #fffacc;
+    align-content: center;
+}
+
+.postcontent {
+    font-size: 0.7rem;
+}
+
+
+/*	MESSAGERIE: ;*/
+
+#FULLMESSAGEFEED {
+    width: 68%;
+}
+
+
+/* classes */
+
+.messagegroup {
+    margin: 40px;
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    height: auto;
+    background-color: lightyellow;
+}
+
+.sidebar {
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.sidebarlink {
+    max-width: 80px;
+    max-height: auto;
+    min-width: 80px;
+    min-height: auto;
+}
+
+.sidebarlink :hover {
+    color: #434DFF;
+    cursor: pointer;
+    -webkit-transition: color 0.1s ease-out;
+    -moz-transition: color 0.1s ease-out;
+    transition: color 0.1s ease-out;
+}
+
+.hiddenwithouthover {
+    display: none;
+}
+
+.hiddenwithouthover .button:hover {
+    display: contents;
+}
+
+.imgplustext {
+    display: inline;
+}
+
+.pponlist {
+    margin: 0px 10px 0px 0px;
+}
+
+.spacer {
+    padding-top: 80px;
+}
+
+.lilspacer {
+    padding-top: 15px;
+}
+
+.void {}
+
+.inscriptionitem {}
+
+#INSCRIPTIONCENTER {
+    background-color: #FFEFBD;
+    color: #2D2A32;
+    border-radius: 40px;
+}
+
+
+/*---------------
+page connexion
+---------------*/
+
+.centerFormItem {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+}
+
+.form-fields {
+    width: 20vw;
+}
+
+#connexion {
+    width: 10vw;
+}
+
+#login_form {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.center-text {
+    text-align: center;
+    align-items: center;
+}

@@ -1,7 +1,4 @@
-# facebook-lite
- <br>
-
-Basic Git commands :
+# Basic Git Commands
  <br>
 
 #pull from github repository
@@ -33,7 +30,7 @@ git merge <branch> -m "message"
 =======
 # ZBook
 Projet de Cours Dev
-
+First Rule to ZBook - RATFM (READ ALL THE FUCKING MANUAL)
 Facebook like - Specs Tech
 
 
