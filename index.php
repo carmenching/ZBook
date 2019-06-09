@@ -24,7 +24,7 @@ if(empty($_SESSION['username'])) {
 
 		<!-- module de publication -->
 <div id="PUBLISHER" class="row">
-<form action="publications.php" method="post" class="col-12">
+<form action="publications.php" method="post" class="col-12" id="submit_post">
 	<div class="lilspacer row"></div>
 	<div class="row">
 		<div class="col-2"><img src=""></div>
@@ -34,8 +34,11 @@ if(empty($_SESSION['username'])) {
 	<div class="row">
 		<img src="" class="col-1">
 		<input type='text' class="form-control col-10" rows="4" name="postContent" id="postContent">
-		<div class="col-1"><div class="row"><input type="submit" valeur="Send" class="col-12" src="img/buttonmessage.png" id="BUTTONPUB" style="width: 40px; height: 40px;">
-		</div></div>
+		<div class="col-1">
+			<div class="row">
+				<input type="submit" valeur="Send" class="col-12" src="img/buttonmessage.png" id="BUTTONPUB" style="width: 40px; height: 40px;">
+			</div>
+		</div>
 	</div>
 	<div class="lilspacer row"></div>
 			</form>
@@ -81,11 +84,10 @@ if(empty($_SESSION['username'])) {
 	</div>
 </div>
 
-<script src="ajax/publications.js"></script>
 <div class="spacer"></div>
+<script src="ajax/publications.js"></script>
 
 <?php
 include 'template/footerpreset.php';
 ?>
-</body>
-</html>
+

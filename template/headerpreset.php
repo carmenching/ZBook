@@ -6,6 +6,7 @@
 	<meta charset="utf-8">
 	<title> ZBook - Accueil </title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/fontawesome/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<!--[if lt IE 9]>
@@ -27,7 +28,7 @@
 				<div class="row">
 					<?php echo "<a href=\"profile.php?user=".$_SESSION['username']."class=\"col-4 navitem text-center\"><img src=\"img/buttonprofile.png\" class=\"col-12 sidebarlink\" alt=\"PROFIL\">".$_SESSION['username']."</a>";?>  
 					<a href="messagerie.php" class="col-4 navitem text-center"><img src="img/buttonmessage.png" class="col-12 sidebarlink" alt="MESSAGERIE"></a>
-					<a href="" class="col-4 navitem text-center"><img src="img/buttonfriends.png" class="col-12 sidebarlink" alt="AMIS"></a>
+					<a href="searchUser.php" class="col-4 navitem text-center"><img src="img/buttonfriends.png" class="col-12 sidebarlink" alt="AMIS"></a>
 					<a href="login.php" class="navitem text-center">Disconnect</a>
 				</div>
 			</div>

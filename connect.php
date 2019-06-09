@@ -21,13 +21,13 @@ if(isset($_POST['submit'])) {
 }
 
 if(empty($_SESSION['username'])) {
-    echo "username does not exist";
+    echo "utilisateur n'existe pas";
     header("refresh:5; url=http://localhost/zbook/login.php");
 
 }
 
 if(!password_verify($password, $userPassword)) {
-    echo "password incorrect!";
+    echo "mot de passe incorrecte";
 	header("refresh:5; url=http://localhost/zbook/login.php");
 } else {
 	header('Location: http://localhost/zbook/index.php');

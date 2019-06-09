@@ -11,8 +11,9 @@ if($send = $mysqli->prepare("INSERT INTO post(ContentPost, IDUser) VALUES (?,?)"
 
     $send->bind_param($si, $postContent, $userID);
     $send->execute();
+    $send->close();
 };
-$send->close();
+
 
 // afficher à l'aide d'ajax le dernier post 
 
@@ -25,7 +26,9 @@ if ($fetch = $mysqli->query($querySearch)) {
         <a href=\"publications.php/?like=". $post['IDPost']."\"><img src=\"img/like.png\" alt=\"like icon\" style=\"width:20px\"></a>
         </article>";
     }
+    $fetch->close();
 }
+
 $mysqli->close();   
 
 

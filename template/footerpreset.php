@@ -80,4 +80,7 @@
   <!-- Copyright -->
 
 </footer>
+
+</body>
+</html>
 <!-- Footer -->
