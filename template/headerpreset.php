@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<title> ZBook - Accueil </title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="css/fontawesome/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/fontawesome/fontawesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<!--[if lt IE 9]>

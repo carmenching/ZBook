@@ -1,5 +1,6 @@
 $('#userSearch').on('submit', function(e) {
     e.preventDefault();
+
     var searchUserName = $('#searchUserName').val()
     $.ajax({
         type: "POST",
@@ -9,6 +10,4 @@ $('#userSearch').on('submit', function(e) {
             $('#userList').prepend(data);
         }
     })
-    return false;
-
 });
