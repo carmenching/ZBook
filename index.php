@@ -6,11 +6,14 @@ if(!isset($_SESSION['username'])) {
 require('config/DBCNX.php');
 // recuperer la session d'utilisateur et injecter l'info sur header
 include 'template/headerpreset.php';
+
+$query = "UPDATE user SET lastActive=NOW() WHERE IDUser =".$_SESSION['userID'];
+if($update = $mysqli->prepare($query)) {
+	$update->execute();
+}
 ?>
 
 <!-- contient la page en elle même, timeline + barre latérale, .... -->
-<div class="spacer"></div>
-
 <div id="FULLPAGE" class="row">	
 
 	<!-- Barre latérale gauche -->
@@ -19,7 +22,7 @@ include 'template/headerpreset.php';
 	</div>
 
 	<!-- contient la division centrale de la page (timeline + module de publication) -->
-	<div id="MIDDLE" class="col-12 col-sm-10 col-md-8">
+	<div id="container" class="col-12 col-sm-10 col-md-8">
 
 		<!-- module de publication -->
 	<div id="PUBLISHER" class="row">

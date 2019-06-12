@@ -17,6 +17,7 @@ if(isset($_POST['submit'])) {
     $dob = htmlspecialchars(trim(strtotime($_POST['dob'])));
     $validate = true;
     
+
     if(empty($username)) {
         echo "identifiant ne peut pas être vide";
         $validate = false;
