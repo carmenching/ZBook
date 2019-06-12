@@ -1,7 +1,6 @@
-$('body').on('click', 'a.addfriend', function(e) {
-    e.preventDefault()
 
-});
+
+
 $(document).ready(function(e) {
 
     e.preventDefault();

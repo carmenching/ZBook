@@ -48,25 +48,7 @@ session_start();
                     </div>
                 </div>
                 <div id="message_section"></div>
-        <?php
-            if($query = $db->prepare("SELECT IDConv, IDUser, ConvMsgContent FROM conv_msg WHERE")) {
-                $query->execute();
-                $query->bind_result($message);
-                while ($query->fetch()) {
-                echo 
-                "<div class=\"message_sent\">
-                    <div class=\"avatar_block\">
-                        <img class=\"message_sender_avatar\" src=\"img/avatar.svg\" alt=\"message sender photo\">
-                    </div>
-                    <div class=\"message_block\">
-                        <p class=\"message_display\">". $message ."</p>
-                    </div>
-                </div>";
-                }
-                $query->close();
-            } 
-          
-        ?>
+        
                 <form action="minichat_post.php" method="post" class="message_edit">
                     <textarea id="message_editor" name="message_editor" id="" cols="30" rows="10"></textarea>
                     <button type="submit">Send</button>

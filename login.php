@@ -1,3 +1,9 @@
+<?php
+//Réinitialiser les sessions sauvegardés
+session_unset();
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
