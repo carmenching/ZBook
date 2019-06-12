@@ -28,4 +28,13 @@ require('config/DBCNX.php');
 }
 */
 
-echo $_SERVER['DOCUMENT_ROOT']."/zbook";
+// echo $_SERVER['DOCUMENT_ROOT']."/zbook";
+
+$queryOnline = "SELECT PseudoUser, TIMESTAMPDIFF(MINUTE, lastActive, NOW()) AS Minutes 
+                FROM user WHERE lastActive BETWEEN DATE_SUB(NOW(), INTERVAL 10 MINUTE) 
+                AND NOW() ORDER BY lastActive DESC";
+if($queryOnline = $mysqli->query($queryOnline)) {
+    while ($userOnline = $queryOnline->fetch_assoc()) {
+        echo "<li>".$userOnline['PseudoUser']."|".$userOnline['Minutes']."</li>";
+    }
+}

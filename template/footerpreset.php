@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="page-footer footer font-small pt-4 bfb">
+<footer class="page-footer footer font-small pt-4 w-100 bfb">
 
   <!-- Footer Links -->
   <div class="container-fluid text-center text-md-left">
