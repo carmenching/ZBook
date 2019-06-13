@@ -13,6 +13,12 @@
 			case "searchUser":
 				echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/userSearch.css\">";
 				break;
+			case "showProfile":
+				echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"".$rootPath."css/profile.css\">";
+				break;
+			case "notification":
+				echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"".$rootPath."css/notification.css\">";
+				break;
 		}
 	}
 	
@@ -33,13 +39,23 @@
 	</div>
 	<div class="sticky-top">
 		<div class="row align-items-center" id="BACKTOPBAR">
-			<div class="col-lg-4 col-md-5 col-sm-8 col-12">
-				<div class="row">
-					<?php echo "<a href=\"profile.php?user=".$_SESSION['username']."class=\"col-4 navitem text-center\"><img src=\"".$rootPath."img/buttonprofile.png\" class=\"col-12 sidebarlink\" alt=\"PROFIL\">".$_SESSION['username']."</a>";?>  
-					<a href="<?= $rootPath; ?>messagerie.php" class="col-4 navitem text-center"><img src="<?= $rootPath; ?>img/buttonmessage.png" class="col-12 sidebarlink" alt="MESSAGERIE"></a>
-					<a href="<?= $rootPath; ?>searchUser.php" class="col-4 navitem text-center"><img src="<?= $rootPath; ?>img/buttonfriends.png" class="col-12 sidebarlink" alt="AMIS"></a>
-					<a href="<?= $rootPath; ?>login.php" class="navitem text-center">Disconnect</a>
-				</div>
+			<div class="col-12">
+				<?php echo "<a href=\"profile.php?user=".$_SESSION['username']."class=\"col-4 navitem text-center\"><img src=\"".$rootPath."img/buttonprofile.png\" class=\"col-12 sidebarlink\" alt=\"PROFIL\">".$_SESSION['username']."</a>";?>  
+				<?php 
+				$query = "SELECT * FROM friend WHERE IDUser= ? AND requestStatus=\"Pending\"";
+				if($fetchNotification = $mysqli->prepare($query)) {
+					$fetchNotification->bind_param("i", $_SESSION['userID']);
+					$fetchNotification->execute();
+					$result=$fetchNotification->get_result();
+					while ($notification = $result->fetch_assoc()) {
+						echo "<a href=\"".$rootPath."notificationCenter.php\"><img src=\"".$rootPath."img/notification.svg\" style=\"width:20px;\"></a>";
+					}
+				}
+				?>
+
+				<a href="<?= $rootPath; ?>messagerie.php" class="col-4 navitem text-center"><img src="<?= $rootPath; ?>img/buttonmessage.png" class="col-12 sidebarlink" alt="MESSAGERIE"></a>
+				<a href="<?= $rootPath; ?>searchUser.php" class="col-4 navitem text-center"><img src="<?= $rootPath; ?>img/buttonfriends.png" class="col-12 sidebarlink" alt="AMIS"></a>
+				<a href="<?= $rootPath; ?>login.php" class="navitem text-center">Disconnect</a>
 			</div>
 		</div>	
 	</div>
