@@ -3,6 +3,7 @@
 html,
 body {
     width: 100%;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -234,6 +235,10 @@ small {
     display: flex;
 }
 
+.container {
+    min-height: 63vh;
+}
+
 
 /* combined */
 
@@ -275,13 +280,6 @@ page connexion
 
 #connexion {
     width: 10vw;
-}
-
-#login_form {
-    min-height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .center-text {

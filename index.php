@@ -53,7 +53,7 @@ if($update = $mysqli->prepare($query)) {
 
 					<?php
 					// recuperer tous les posts depuis la bdd
-					$querySearch = "SELECT post.IDPost, user.FirstNameUser, user.LastNameUser, post.DatePost, post.ContentPost, COUNT(post_like.IDPostLike) AS NumberLikes 
+					$querySearch = "SELECT user.IDUser, post.IDPost, user.FirstNameUser, user.LastNameUser, post.DatePost, post.ContentPost, COUNT(post_like.IDPostLike) AS NumberLikes 
 									FROM post LEFT JOIN post_like ON post_like.IDPost = post.IDPost, user 
 									WHERE post.IDUser = user.IDUser 
 									GROUP BY IDPost 
@@ -63,7 +63,7 @@ if($update = $mysqli->prepare($query)) {
 						while ($post = $fetch->fetch_assoc()) {
 							echo 
 							"<article class=\"fullpost\">
-							<p class=\"post-title mt-3\"><a href=\"\">".$post['FirstNameUser']." ".$post['LastNameUser']."</a><small class=\"ml-4\">".$post['DatePost']."</small></p>
+							<p class=\"post-title mt-3\"><a href=\"otherProfile.php/?userID=".$post['IDUser']."\">".$post['FirstNameUser']." ".$post['LastNameUser']."</a><small class=\"ml-4\">".$post['DatePost']."</small></p>
 							<p class=\"postcontent\">" . $post['ContentPost'] . "</p>
 							<a class=\"likePost\" href=\"publications_like.php/?like=". $post['IDPost']."\"><img src=\"img/like.png\" alt=\"like icon\" style=\"width:20px\">
 							<p id =\"postid".$post['IDPost']. "\" class=\"likeCount\">".intval($post['NumberLikes'])."</p></a>
@@ -84,4 +84,4 @@ if($update = $mysqli->prepare($query)) {
 <?php
 include 'template/footerpreset.php';
 ?>
-
+$_SESSION['userID']

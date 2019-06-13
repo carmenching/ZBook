@@ -4,8 +4,8 @@ session_start();
 $action = "profile";
 include 'template/headerpreset.php';
 
-if(isset($_GET['idUser'])) {
-    $currentUser = $_GET['idUser'];
+if(isset($_GET['userID'])) {
+    $currentUser = $_GET['userID'];
     $userQuery = "SELECT IDUser, LastNameUser, FirstNameUser, PseudoUser, MailUser, BirthDateUser FROM user WHERE IDUser =?";
     if($fetchUser = $mysqli->prepare($userQuery)) {
         $fetchUser->bind_param("s", $currentUser);

@@ -28,7 +28,7 @@ if(empty($_SESSION['username'])) {
 
 if(!password_verify($password, $userPassword)) {
     echo "mot de passe incorrecte";
-	header("refresh:5; url=http://localhost/zbook/login.php");
+	header("refresh:3; url=http://localhost/zbook/login.php");
 } else {
 	header('Location: http://localhost/zbook/index.php');
 }

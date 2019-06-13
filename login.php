@@ -13,6 +13,7 @@ session_start();
 	<title> ZBook - Accueil </title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<!--[if lt IE 9]>
 	 <script
@@ -40,8 +41,9 @@ session_start();
 
 	<!-- barre du haut, contiendra logo, shearchbar etc -->
 
-    <div class="container" id="login_form">
-      <form action="connect.php" method="POST">
+    <div class="container">
+	<div class="center-text" id="login_form">
+	  <form action="connect.php" method="POST">
         <h2 class="center-text">Connexion à ZBOOK</h2>
           <div class="centerFormItem form-fields">
             <input type="text" class="form-control center-text" id="username" name="username" placeholder="Nom d'utilisateur" required/>
@@ -51,7 +53,6 @@ session_start();
           </div>
           <button type="submit" class="centerFormItem btn btn-primary btn-lg btn-block center-text" id ="connexion" value="Connexion" name="submit">Connexion</button>
       </form>
-      <div class="container center-text">
           Pas encore de compte? <a href="Inscription.php" style="font-family:'Play', sans-serif;">Inscrivez-vous ici</a>
       </div>
     </div>
