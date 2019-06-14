@@ -23,7 +23,7 @@
 	</div>
 
    <div class="signup centerFormItem form-fields">
-    <form action="Create_Account.php" method="POST" id="inscription_form">
+    <form action="newAccount.php" method="POST" id="inscription_form">
      <h2 style="margin-bottom:20px;" class="center-text">Créer un compte</h2>
      <input type="pseudo" name="username" class="form-control center-text" placeholder="Pseudo" required><br><br>
      <input type="text" name="firstname" class="form-control center-text" placeholder="Prenom" required><br><br>
