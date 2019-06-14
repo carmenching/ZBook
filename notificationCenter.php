@@ -9,6 +9,7 @@ include 'template/headerpreset.php';
         <thead>
             <tr>
                 <th scope="col">Notification</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>

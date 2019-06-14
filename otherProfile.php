@@ -12,7 +12,7 @@ if(isset($_GET['idUser'])) {
         $fetchUser->execute();
         $result=$fetchUser->get_result();
         while($user = $result->fetch_assoc()) {
-            
+            $currentUserID = $user['IDUser'];
             $currentUsername = $user['PseudoUser'];
             $currentUserFirstName = $user['FirstNameUser'];
             $currentUserLastName = $user['LastNameUser'];
@@ -57,11 +57,28 @@ if(isset($_GET['idUser'])) {
                 </tr>
                 <tr>
                     <th scope="row">Amis</th>
-                    <td><? $currentUsername ?></td>
+                    <td>
+                <?php 
+                
+                $friendQuery = "SELECT user.PseudoUser, user.IDUser
+                                FROM user, friend 
+                                WHERE user.IDUser=friend.IDUser_Sender 
+                                AND friend.IDUser =".$currentUserID; 
+                if($userFriends = $mysqli->prepare($friendQuery)) {
+                    $userFriends->execute();
+                    $result=$userFriends->get_result();
+                    while($friend=$result->fetch_assoc()) {
+                        echo "<li><a href=\"".$rootPath."otherProfile.php?idUser=".$friend['IDUser']."\">".$friend['PseudoUser']."</a></li>";
+                    }
+                }
+                $userFriends->close();
+                $mysqli->close();
+                ?>
+                </td>
                 </tr>
             </tbody>
         </table>
         
            
         
-    </div>
+    

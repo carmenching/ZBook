@@ -17,3 +17,7 @@
 #userPseudo {
     line-height: 2;
 }
+
+li {
+    list-style-type: none;
+}

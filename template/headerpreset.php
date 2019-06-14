@@ -34,13 +34,13 @@
 <body>
 <header class="" id="fulltop">
 	<div class="row align-items-center" id="TOPTOPBAR">
-		<a href="<?= $rootPath; ?>index.php" class="col-2"><img src="<?= $rootPath; ?>img/mainlogo.png" id="LOGO" class="" alt="logo"></a>
+		<a href="<?= $rootPath ?>index.php" class="col-2"><img src="<?= $rootPath; ?>img/mainlogo.png" id="LOGO" class="" alt="logo"></a>
 		<h1 class="col-3 offset-lg-7 offset-md-7 offset-sm-6 offset-2">ZBooK</h1>
 	</div>
 	<div class="sticky-top">
 		<div class="row align-items-center" id="BACKTOPBAR">
 			<div class="col-12">
-				<?php echo "<a href=\"profile.php?user=".$_SESSION['username']."class=\"col-4 navitem text-center\"><img src=\"".$rootPath."img/buttonprofile.png\" class=\"col-12 sidebarlink\" alt=\"PROFIL\">".$_SESSION['username']."</a>";?>  
+				<a href="<?=$rootPath?>profile.php?user=<?=$_SESSION['username']?>" class="col-4 navitem text-center"> <img src="<?=$rootPath?>img/buttonprofile.png" class="col-12 sidebarlink" alt="PROFIL"><?= $_SESSION['username']?></a>
 				<?php 
 				$query = "SELECT * FROM friend WHERE IDUser= ? AND requestStatus=\"Pending\"";
 				if($fetchNotification = $mysqli->prepare($query)) {
