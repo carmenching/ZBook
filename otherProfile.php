@@ -27,8 +27,11 @@ if(isset($_GET['idUser'])) {
         <div id="userTitle" class="m-5">
             <?php echo "<img src=\"".$rootPath."img/user.svg\" id=\"profileAvatar\" alt=\"Profile Photo Placeholder\">";?>
             <h1 id="userPseudo"><?php echo $currentUsername ?></h1>
-            <?php echo "<a href=\"".$rootPath."addfriend.php/?idUser=".$currentUser."\">
-                <img src=\"".$rootPath."img/add-contact.svg\" id=\"profileAvatar\" style=\"width:30px;\" alt=\"Profile Photo Placeholder\">";?>
+            <a href="<?= $rootPath ?>addfriend.php/?idUser=<?=$currentUser?>">
+                <img src="<?=$rootPath?>img/add-contact.svg" id="profileAvatar" style="width:30px;" alt="Profile Photo Placeholder">
+            </a>
+            <a id="chatWith" href="<?=$rootPath?>messagerie.php/?idUser=<?= $currentUser?>">
+                <img src="<?=$rootPath?>img/chat.svg"  style="width:30px;" alt="chat icon">
             </a>
         </div>
         <table class="table" id="userInfo">

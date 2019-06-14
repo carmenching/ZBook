@@ -19,6 +19,9 @@
 			case "notification":
 				echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"".$rootPath."css/notification.css\">";
 				break;
+			case "messenger":
+				echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"".$rootPath."css/messenger.css\">";
+				break;
 		}
 	}
 	

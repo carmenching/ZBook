@@ -1,0 +1,84 @@
+.user_tab {
+    display: flex;
+    height: 60px;
+}
+
+li {
+    margin-right: 15px;
+}
+
+.message_sent {
+    display: flex;
+    flex-direction: column;
+}
+
+.chatwith_avatar {
+    width: 40px;
+    height: 40px;
+}
+
+.message_edit {
+    bottom: 0;
+    width: 75%;
+    padding: 15px;
+}
+
+
+/* added recently */
+
+#message_editor {
+    width: 65%;
+    height: 30px;
+}
+
+#chatWith {
+    line-height: 6;
+}
+
+#messages_panel {
+    width: 100%;
+}
+
+#chat_header {
+    background: grey;
+}
+
+#destined_user {
+    margin: 0;
+    padding: 20px 0 20px 15px;
+    color: white;
+    font-weight: normal;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+.container {
+    border: solid 1px grey;
+    display: flex;
+    min-height: 53vh;
+    padding: 0;
+}
+
+.message_block {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.message_block_chatwith {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.message_display {
+    line-height: 1.3;
+    background: pink;
+    border-radius: 15px;
+    padding: 9px;
+}
+
+.message_display_chatwith {
+    line-height: 1.3;
+    background: #999;
+    border-radius: 15px;
+    padding: 9px;
+}

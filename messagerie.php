@@ -1,50 +1,51 @@
 <?php
-require('config/msgquery.php');
-?>
-<?php
 require('config/DBCNX.php');
-require ('template/headerpreset.php');
-?>
+session_start();
+$action="messenger";
+include 'template/headerpreset.php';
 
+$chatWith = $_GET['idUser'];
+$currentUser = $_SESSION['userID'];
+?>
 
 <!-- contient la page en elle même, timeline + barre latérale, .... -->
-<div id="FULLPAGE" class="row">	
-
-	<!-- Barre latérale gauche -->
-	<div class="void col-0 col-sm-1 col-md-2">
-	</div>
-
-	<!-- contient la division centrale de la page (timeline + module de publication) -->
-	<div id="MIDDLE" class="col-12 col-sm-10 col-md-8">
-		<script type="text/javascript" src="ajax/messagerie.js"></script>
-		<?php print ( empty($messages) ) ? '<p id="nopost">Aucun message !</p>' :''; ?>
-		<div id="messagerie">
-			<?php ?>
-			<form action="messagerie.php">
-				<label for="auteur">Auteur :</label><input type="text" id="auteur" size="20" />
-				<label for="corps">Message :</label><textarea id="corps" cols="30" rows="7"></textarea>
-				<input type="submit" value="Envoyer" />
-			</form>
+<section class="container mt-5 mb-5">
+	<section id="messages_panel">
+		<div id="chat_header">
+			<h2 id="destined_user">Chatting with Username 1</h2>
 		</div>
-		<div id="messages">
+		<div class="message_sent">
 			<?php
-			foreach($messages as $message) {
-				printMessage($message);
+			$messageQuery = "SELECT * FROM message WHERE (messageSentBy =".$chatWith." AND messageSentTo = ".$currentUser.") OR (messageSentBy =".$currentUser." AND messageSentTo =".$chatWith.") ORDER BY messageDate DESC";
+			if($messageFetch = $mysqli->prepare($messageQuery)) {
+				$messageFetch->execute();
+				$result = $messageFetch->get_result();
+				while($message = $result->fetch_assoc()) {
+					if ($message['messageSentBy'] == $chatWith) {
+						echo "
+							<div class=\"message_block_chatwith\">
+							<img class=\"chatwith_avatar\" src=\"".$rootPath."img/chatwith.svg\" alt=\"message sender photo\">
+								<p class=\"message_display_chatwith\">".$message['messageContent']."</p>
+							</div>";
+					} else if ($message['messageSentBy'] == $currentUser) {
+					echo "<div class=\"message_block\">
+							<p class=\"message_display\">".$message['messageContent']."</p>
+							<img class=\"chatwith_avatar\" src=\"".$rootPath."img/currentUser.svg\" alt=\"message sender photo\">
+						</div>";
+					}
+				}
 			}
-			?>
+			?>	
 		</div>
-	</div>
-
-	<!-- Barre latérale de menu -->
-	<div class="void col-0 col-sm-1 col-md-2">
-	</div>
-</div>
-
-<div class="spacer"></div>
+        
+		<form action="message.php" method="post" class="message_edit">
+			<textarea id="message_editor" name="message_editor" id="" cols="30" rows="10"></textarea>
+			<button type="submit">Send</button>
+		</form>
+	</section>
+</section>
 
 <?php
-require('template/footerpreset.php');
-?>
 
-</body>
-</html>
+include 'template/footerpreset.php';
+?>
