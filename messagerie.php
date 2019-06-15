@@ -3,48 +3,52 @@ require('config/DBCNX.php');
 session_start();
 $action="messenger";
 include 'template/headerpreset.php';
-
-$chatWith = $_GET['idUser'];
 $currentUser = $_SESSION['userID'];
-?>
 
-<!-- contient la page en elle même, timeline + barre latérale, .... -->
+?>
 <section class="container mt-5 mb-5">
+    <aside>
+        <div id="chat_header">
+			<h2 id="destined_user">Users</h2>
+		</div>
+        <ul>
+            <?php 
+            $chatwithQuery = "SELECT * FROM message_user WHERE IDUser = ".$currentUser." OR IDUserWith = ".$currentUser;
+            if($chatWithFetch = $mysqli->prepare($chatwithQuery)) {
+                $chatWithFetch->execute();
+                $result = $chatWithFetch->get_result();
+                while($chatWtih = $result->fetch_assoc()) {
+                    if ($chatWtih['IDUser']!==$currentUser) {
+                        echo "<li class=\"chatWithUser\"><a href=\"#\" class=\"link\" id=\"".$chatWtih['IDUser']."\">".$chatWtih['IDUser']."</a></li>";
+                    } else {
+                        echo "<li class=\"chatWithUser\"><a href=\"#\" class=\"link\" id=\"".$chatWtih['IDUserWith']."\">".$chatWtih['IDUserWith']."</a></li>";
+                    }
+                }
+            }
+            ?>
+        </ul>
+    </aside>
 	<section id="messages_panel">
 		<div id="chat_header">
 			<h2 id="destined_user">Chatting with Username 1</h2>
 		</div>
-		<div class="message_sent">
-			<?php
-			$messageQuery = "SELECT * FROM message WHERE (messageSentBy =".$chatWith." AND messageSentTo = ".$currentUser.") OR (messageSentBy =".$currentUser." AND messageSentTo =".$chatWith.") ORDER BY messageDate DESC";
-			if($messageFetch = $mysqli->prepare($messageQuery)) {
-				$messageFetch->execute();
-				$result = $messageFetch->get_result();
-				while($message = $result->fetch_assoc()) {
-					if ($message['messageSentBy'] == $chatWith) {
-						echo "
-							<div class=\"message_block_chatwith\">
-							<img class=\"chatwith_avatar\" src=\"".$rootPath."img/chatwith.svg\" alt=\"message sender photo\">
-								<p class=\"message_display_chatwith\">".$message['messageContent']."</p>
-							</div>";
-					} else if ($message['messageSentBy'] == $currentUser) {
-					echo "<div class=\"message_block\">
-							<p class=\"message_display\">".$message['messageContent']."</p>
-							<img class=\"chatwith_avatar\" src=\"".$rootPath."img/currentUser.svg\" alt=\"message sender photo\">
-						</div>";
-					}
-				}
-			}
-			?>	
+		<div id="message_sent">
+			
 		</div>
-        
-		<form action="message.php" method="post" class="message_edit">
-			<textarea id="message_editor" name="message_editor" id="" cols="30" rows="10"></textarea>
-			<button type="submit">Send</button>
-		</form>
+        <form style="display:none;" id="message_edit" action="sendMessage.php" method="POST">
+            <input id="chatWith" name="chatWith" type="hidden" value="">
+            <textarea name="message_editor" id="message_editor" cols="30" rows="10"></textarea>
+            <input type="submit" value="Envoyer">
+        </form>
+		
 	</section>
 </section>
 
+<script src="<?=$rootPath?>ajax/messagerie.js"></script>
+<script>
+    
+    
+</script>
 <?php
 
 include 'template/footerpreset.php';
