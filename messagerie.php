@@ -13,7 +13,7 @@ $currentUser = $_SESSION['userID'];
 		</div>
         <ul>
             <?php 
-            $chatwithQuery = "SELECT friend.IDUser_Sender, user.PseudoUser FROM friend, user WHERE user.IDUser=friend.IDUser_Sender AND friend.IDUser = ".$currentUser;
+            $chatwithQuery = "SELECT friend.IDUser_Sender, user.PseudoUser FROM friend, user WHERE user.IDUser=friend.IDUser_Sender AND friend.requestStatus =\"Accept\" AND friend.IDUser = ".$currentUser;
             if($chatWithFetch = $mysqli->prepare($chatwithQuery)) {
                 $chatWithFetch->execute();
                 $result = $chatWithFetch->get_result();
