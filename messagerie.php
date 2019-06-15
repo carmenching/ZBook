@@ -9,7 +9,7 @@ $currentUser = $_SESSION['userID'];
 <section id="messenger" class="container wb mt-5 mb-5">
     <aside>
         <div class="chat_header leftradius">
-			<h2 id="destined_user">Users</h2>
+			<h2 class="destined_user">Users</h2>
 		</div>
         <ul>
             <?php 
@@ -27,7 +27,7 @@ $currentUser = $_SESSION['userID'];
     </aside>
 	<section id="messages_panel">
 		<div class="chat_header rightradius">
-			<h2 id="destined_user">Chatting with Username 1</h2>
+			<h2 class="destined_user"><span id="chatWithTitle">Sélectionner un utilisateur</h2>
 		</div>
 		<div id="message_sent">
 			

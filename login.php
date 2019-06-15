@@ -23,18 +23,14 @@ session_start();
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 <body>
-<header class="" id="fulltop">
-	<div class=" align-items-center" id="topBar">
-		<a href="index.php" class=""><img src="img/mainlogo_nobg.png" id="LOGO" class="" alt="logo"></a>
-		<h1 class="">ZBooK</h1>
-	</div>
-	<div class="sticky-top">
+<header id="fulltop">
+	<div class="container justifycenter">
+		<div class="" id="leftTopBar">
+			<img src="img/mainlogo_nobg.png" id="logo" alt="logo">
+			<h1>ZBooK</h1>
+		</div>
+	
 		<div class="row align-items-center" id="BACKTOPBAR">
-			<div class="col-lg-4 col-md-5 col-sm-8 col-12">
-				<div class="row">
- 
-				</div>
-			</div>
 		</div>	
 	</div>
 </header>

@@ -37,7 +37,9 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('.link').click(function(e) {
         var chatWith = $(this).attr("id");
+        var chatWithTitle = $(this).html();
         $('#chatWith').val(chatWith);
-        $('#message_edit').toggle();
+        $('#message_edit').show();
+        $('#chatWithTitle').html(chatWithTitle);
     })
 })

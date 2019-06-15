@@ -67,7 +67,7 @@ textarea {
     border-top-right-radius: 10px;
 }
 
-#destined_user {
+.destined_user {
     margin: 0;
     padding: 20px;
     color: white;
