@@ -1,3 +1,9 @@
+# Message à Monsieur Mangin
+Nous n'avons pas faire un model pour la configuration de bdd, il faut télécharger manuellement le model pour tester. 
+
+:Carmen
+
+
 # Basic Git Commands
  <br>
 
@@ -41,4 +47,4 @@ Facebook like - Specs Tech
 -	Voir les utilisateurs connectés il y a – de 10 min
 -	Changer les envois de formulaire et envoi AJAX
 -	Créer des liens d’amitié et modifier les fonctionnalités précédentes
->>>>>>> ed88d631316bfbf5fc43caea0cff8d8078bb07a9
+
