@@ -18,9 +18,9 @@ if($update = $mysqli->prepare($query)) {
 
 	<!-- contient la division centrale de la page (timeline + module de publication) -->
 	<div class="container">
-		<div class="row mainRow mb-5 mt-5">
+		<div class="row mb-5 mt-5">
 			<div id="usersOnline" class="p-4 col-2">
-				<p class="bt">Utilisateurs Active</p>
+				<p class="bbt amatic fs-2">Utilisateurs Actif</p>
 				<ul id="usersList" class="bbt">
 					<?php 
 					$queryOnline = "SELECT PseudoUser, TIMESTAMPDIFF(MINUTE, lastActive, NOW()) AS Minutes 
@@ -36,14 +36,15 @@ if($update = $mysqli->prepare($query)) {
 					?> 
 				</ul>
 			</div>
+
 			<div id="PUBLISHER" class="p-4 col-10">
 				<form action="publications.php" method="post" id="submit_post">
-					<div class="row form-row">
-						<p class="text-center bt" id="POSTTOPTEXT">Publier Un Post</p>
+					<div class="">
+						<p class="text-center bbt amatic fs-2" id="POSTTOPTEXT">Publier Un Post</p>
 					</div>
-					<div class="row form-row wb p-4">
-						<input type='text' class="noBorder" rows="4" name="postContent" id="postContent" style="width:85%;">
-						<input type="submit" valeur="Send" src="img/buttonmessage.png" class="btn bbb wt" style="width:15%;font-weight:bold;">
+					<div class="ww p-4 aligncenter" id="postPublisher">
+						<textarea type='text' class="noBorder" rows="4" name="postContent" id="postContent" style="width:85%;"></textarea>
+						<input class="valid-btn bbb wt" type="submit" valeur="Send" src="img/buttonmessage.png" class="btn bbb wt">
 					</div>
 				</form>
 					
@@ -62,11 +63,13 @@ if($update = $mysqli->prepare($query)) {
 					if ($fetch = $mysqli->query($querySearch)) {
 						while ($post = $fetch->fetch_assoc()) {
 							echo 
-							"<article class=\"fullpost\">
-							<p class=\"post-title mt-3\"><a href=\"otherProfile.php/?userID=".$post['IDUser']."\">".$post['FirstNameUser']." ".$post['LastNameUser']."</a><small class=\"ml-4\">".$post['DatePost']."</small></p>
-							<p class=\"postcontent\">" . $post['ContentPost'] . "</p>
-							<a class=\"likePost\" href=\"publications_like.php/?like=". $post['IDPost']."\"><img src=\"img/like.png\" alt=\"like icon\" style=\"width:20px\">
-							<p id =\"postid".$post['IDPost']. "\" class=\"likeCount\">".intval($post['NumberLikes'])."</p></a>
+							"<article class=\"ww fullpost\">
+							<p class=\"post-title p-3 bb\"><a class=\"bbt\" href=\"otherProfile.php/?userID=".$post['IDUser']."\">".$post['FirstNameUser']." ".$post['LastNameUser']."</a><small class=\"ml-4\">".$post['DatePost']."</small></p>
+							<p class=\"postcontent p-3\">" . $post['ContentPost'] . "</p>
+							<div class=\"aligncenter\">
+							<a class=\"likePost bbt pl-3 pb-3 aligncenter\" href=\"publications_like.php/?like=". $post['IDPost']."\"><img src=\"img/like.png\" alt=\"like icon\" style=\"width:20px\">
+							<p id =\"postid".$post['IDPost']. "\" class=\"likeCount m-0\">".intval($post['NumberLikes'])."</p></a>
+							</div>
 							</article>";
 						}
 					}
@@ -84,4 +87,3 @@ if($update = $mysqli->prepare($query)) {
 <?php
 include 'template/footerpreset.php';
 ?>
-$_SESSION['userID']

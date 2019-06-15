@@ -24,9 +24,9 @@ session_start();
 </head>
 <body>
 <header class="" id="fulltop">
-	<div class="row align-items-center" id="TOPTOPBAR">
-		<a href="index.php" class="col-2"><img src="img/mainlogo.png" id="LOGO" class="" alt="logo"></a>
-		<h1 class="col-3 offset-lg-7 offset-md-7 offset-sm-6 offset-2">ZBooK</h1>
+	<div class=" align-items-center" id="topBar">
+		<a href="index.php" class=""><img src="img/mainlogo_nobg.png" id="LOGO" class="" alt="logo"></a>
+		<h1 class="">ZBooK</h1>
 	</div>
 	<div class="sticky-top">
 		<div class="row align-items-center" id="BACKTOPBAR">

@@ -31,10 +31,6 @@ if(isset($_GET['idUser'])) {
                 <img src="<?=$rootPath?>img/add-contact.svg" id="profileAvatar" style="width:30px;" alt="Profile Photo Placeholder">
             </a>
             
-
-            <a id="chatWith" href="<?=$rootPath?>messagerie.php/?idUser=<?= $currentUser?>">
-                <img src="<?=$rootPath?>img/chat.svg"  style="width:30px;" alt="chat icon">
-            </a>
         </div>
         <table class="table" id="userInfo">
             <thead>

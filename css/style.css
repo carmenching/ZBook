@@ -4,47 +4,59 @@ html,
 body {
     width: 100%;
     overflow-x: hidden;
+    background-color: #e9ebee;
+}
+
+header {
+    background-color: #394a59;
 }
 
 h1 {
     text-align: center;
 }
 
-input[search] {}
+a {
+    color: #394a59;
+}
 
 small {
     color: black;
+}
+
+ul {
+    padding: 0;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
 }
 
 
 /*colors*/
 
 .bbb {
-    background-color: #2d2a32;
+    background-color: #394a59;
 }
 
 .bb {
-    background-color: #b5d6b2;
+    background-color: #f5f6f7;
 }
 
 .wb {
-    background-color: #fdfefd;
+    background-color: #F2F3F5;
 }
 
-.bcb {
-    background-color: #fffacc;
+.ww {
+    background-color: white;
 }
 
 .bfb {
-    background-color: #ffefbd;
+    background-color: #e9ebee;
 }
 
 .bbt {
-    color: #2D2A32;
-}
-
-.bt {
-    color: #b5d6b2;
+    color: #394a59;
 }
 
 .wt {
@@ -56,7 +68,7 @@ small {
 }
 
 .bft {
-    color: #ffefbd;
+    color: #e9ebee;
 }
 
 .noBorder {
@@ -64,16 +76,60 @@ small {
 }
 
 
+/* fonts */
+
+.fs-2 {
+    font-size: 2rem;
+}
+
+.amatic {
+    font-family: Amatic SC;
+}
+
+
+/* text and object align */
+
+.lh-3 {
+    line-height: 3;
+}
+
+.valid-btn {
+    width: 15%;
+    height: 30%;
+    font-weight: bold;
+    border: none;
+}
+
+.aligncenter {
+    display: flex;
+    align-items: center;
+}
+
+.justifycenter {
+    display: flex;
+    justify-content: space-between;
+}
+
+
 /*ids*/
 
-#TOPTOPBAR {
-    background-color: #2D2A32;
-    color: #FFEFBD;
+#leftTopBar {
+    background-color: #394a59;
+    color: #e9ebee;
+    display: flex;
+    padding-left: 15px;
+    align-content: center;
+}
+
+#leftTopBar h1 {
+    text-align: center;
+    font-family: Amatic SC;
+    font-weight: bold;
+    margin-bottom: 0;
 }
 
 #BACKTOPBAR {
-    background-color: #FFEFBD;
-    color: #FFEFBD;
+    color: #e9ebee;
 }
 
 #TOPBARLIST {
@@ -81,7 +137,7 @@ small {
     align-items: center;
 }
 
-#LOGO {
+#logo {
     height: 40px;
     width: 40px;
 }
@@ -130,26 +186,24 @@ small {
 }
 
 .fullpost {
-    background-color: #fffacc;
     align-content: center;
     width: 100%;
     margin: 10px;
-    padding: 15px;
+    border: 1px #d3d3d3 solid;
+    border-radius: 10px;
 }
 
 .postcontent {
-    font-size: 0.7rem;
-    color: #2D2A32;
+    font-size: 1.5rem;
+    color: #394a59;
 }
 
 .post-title {
     display: flex;
     width: 100%;
     justify-content: space-between;
-}
-
-.mainRow {
-    background-color: #2D2A32;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 
@@ -162,25 +216,13 @@ small {
 
 /* classes */
 
-.messagegroup {
-    margin: 40px;
-    display: inline-block;
-    position: relative;
-    width: 200px;
-    height: auto;
-    background-color: lightyellow;
-}
-
 .sidebar {
     padding-left: 1%;
     padding-right: 1%;
 }
 
 .sidebarlink {
-    max-width: 80px;
-    max-height: auto;
-    min-width: 80px;
-    min-height: auto;
+    width: 70px;
 }
 
 .sidebarlink :hover {
@@ -220,8 +262,8 @@ small {
 .inscriptionitem {}
 
 #INSCRIPTIONCENTER {
-    background-color: #FFEFBD;
-    color: #2D2A32;
+    background-color: #e9ebee;
+    color: #394a59;
     border-radius: 40px;
 }
 
@@ -235,15 +277,11 @@ small {
     display: flex;
 }
 
-.container {
-    min-height: 63vh;
-}
-
 
 /* combined */
 
 #usersOnline ul {
-    background-color: #FFEFBD;
+    background-color: #e9ebee;
     list-style-type: none;
     padding: 0;
 }
@@ -253,7 +291,7 @@ small {
 }
 
 #usersList li {
-    padding: 20px 0 20px 20px;
+    padding: 20px 0;
 }
 
 

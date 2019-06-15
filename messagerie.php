@@ -6,30 +6,27 @@ include 'template/headerpreset.php';
 $currentUser = $_SESSION['userID'];
 
 ?>
-<section class="container mt-5 mb-5">
+<section id="messenger" class="container wb mt-5 mb-5">
     <aside>
-        <div id="chat_header">
+        <div class="chat_header leftradius">
 			<h2 id="destined_user">Users</h2>
 		</div>
         <ul>
             <?php 
-            $chatwithQuery = "SELECT * FROM message_user WHERE IDUser = ".$currentUser." OR IDUserWith = ".$currentUser;
+            $chatwithQuery = "SELECT friend.IDUser_Sender, user.PseudoUser FROM friend, user WHERE user.IDUser=friend.IDUser_Sender AND friend.IDUser = ".$currentUser;
             if($chatWithFetch = $mysqli->prepare($chatwithQuery)) {
                 $chatWithFetch->execute();
                 $result = $chatWithFetch->get_result();
                 while($chatWtih = $result->fetch_assoc()) {
-                    if ($chatWtih['IDUser']!==$currentUser) {
-                        echo "<li class=\"chatWithUser\"><a href=\"#\" class=\"link\" id=\"".$chatWtih['IDUser']."\">".$chatWtih['IDUser']."</a></li>";
-                    } else {
-                        echo "<li class=\"chatWithUser\"><a href=\"#\" class=\"link\" id=\"".$chatWtih['IDUserWith']."\">".$chatWtih['IDUserWith']."</a></li>";
-                    }
-                }
+                        echo "<li class=\"chatWithUser\"><a href=\"#\" class=\"link p-3\" id=\"".$chatWtih['IDUser_Sender']."\">".$chatWtih['PseudoUser']."</a></li>";
+                } 
             }
+        
             ?>
         </ul>
     </aside>
 	<section id="messages_panel">
-		<div id="chat_header">
+		<div class="chat_header rightradius">
 			<h2 id="destined_user">Chatting with Username 1</h2>
 		</div>
 		<div id="message_sent">

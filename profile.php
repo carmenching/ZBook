@@ -18,12 +18,13 @@ if(isset($_SESSION['username'])) {
             $currentUserLastName = $user['LastNameUser'];
             $currentUserEmail = $user['MailUser'];
             $currentUserBirthDate= $user['BirthDateUser'];
+        
         }
+        $fetchUser->close();
     }
-    $fetchUser->close();
 }
 ?>
- <div class="container profileTable">
+ <div id="profileTable" class="container wb mt-5">
     
     <div id="userTitle" class="m-5">
         <?php echo "<img src=\"".$rootPath."img/user.svg\" id=\"profileAvatar\" alt=\"Profile Photo Placeholder\">";?>
