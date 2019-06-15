@@ -2,7 +2,7 @@
 
 //Récupérer les données de connexions
 // <--------serveur scallingo---------->
-$servername = '9883e481-c82d-46c5-b38a-fc00215f3a9c.zbooklike-4405.mysql.dbs.scalingo.com:32235';
+$servername = 'localhost';
 $username = 'zbooklike_4405';
 $password = 'bzDPCikzVTgmw1hmv1Tn';
 $db = 'zbooklike_4405';
