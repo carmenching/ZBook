@@ -1,50 +1,82 @@
 <?php
-//Paramètres de connexion à la BDD
-//$servername = '9883e481-c82d-46c5-b38a-fc00215f3a9c.zbooklike-4405.mysql.dbs.scalingo.com:32235';
-//$username = 'zbooklike_4405';
-//$password = 'bzDPCikzVTgmw1hmv1Tn';
-//$db = 'zbooklike_4405';
+require('config/DBCNX.php'); 
 
-//Connexion test au localhost
-$servername = 'localhost';
-$username = 'root';
-$password = '';
-$db = 'local_zbook';
-
+if(isset($_POST['submit'])) {
 
 //définition des variables de connexion
-$login = htmlspecialchars(trim($_POST['PseudoUser']));
-$PasswordUser = htmlspecialchars(trim($_POST['PasswordUser']));
+$username = htmlspecialchars(trim($_POST['username']));
+$password = htmlspecialchars(trim($_POST['password']));
 
-try {
-$conn =new mysqli($servername, $username, $password, $db);
-//if(isset($_POST) && !empty($_POST['PseudoUser']) && !empty($_POST['PasswordUser'])) {
-  //extract($_POST);
-  // on recupère le password de la table qui correspond au login du visiteur
-  $sql = "select * from user where PasswordUser='$PasswordUser' and PseudoUser = '$login'";
+session_start();    
 
-  //
-  $req = $conn->query($sql);
-  $row = $req->fetch_assoc();
-
-
-  if($row != null){
-    session_start();
-    $_SESSION['PseudoUser'] = $login;
-    echo "connexion ok ";
-
+  $userquery = "SELECT IDUser, PseudoUser, PasswordUser FROM user WHERE PseudoUser =?";
+  if($fetch = $mysqli->prepare($userquery)) {
+      $fetch->bind_param("s", $username);
+      $fetch->execute();
+      $result=$fetch->get_result();
+      while ($user = $result->fetch_assoc()) {
+          $_SESSION['username'] = $user['PseudoUser'];
+          $userPassword = $user['PasswordUser'];
+          $_SESSION['userID'] = $user['IDUser'];
+      }
   }
- else {
-
-     echo "connexion pas ok";
-     exit;
- }  
-
- $conn->close();
-}catch (Exception $e){
-    die("Impossible de se connecter" .$e->getMessage);
-   
-   
-   
+  $mysqli->close();
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta charset="utf-8">
+	<title> ZBook - Accueil </title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--[if lt IE 9]>
+	 <script
+	src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+ <![endif]-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+<header id="fulltop">
+	<div class="container justifycenter">
+		<div class="" id="leftTopBar">
+			<img src="img/mainlogo_nobg.png" id="logo" alt="logo">
+			<h1>ZBooK</h1>
+		</div>
+	
+		<div class="row align-items-center" id="BACKTOPBAR">
+		</div>	
+	</div>
+</header>
+
+	<!-- barre du haut, contiendra logo, shearchbar etc -->
+
+    <div class="container">
+        <div class="center-text" id="login_form">
+            <h2 class="center-text">Message d'erreur</h2>
+	<?php
+        if(!empty($_SESSION['username'])) {
+            if(isset($password)&&isset($userPassword)) {
+                if(!password_verify($password, $userPassword)) {
+                    echo "mot de passe incorrecte, vous serez redirigé à la page de connexion";
+                    header("refresh:3; url=http://localhost/zbook/login.php");
+                } else {
+                    header('Location: http://localhost/zbook/index.php');
+                }
+            } else {
+                echo "mot de passe incorrecte, vous serez redirigé à la page de connexion";
+                header("refresh:3; url=http://localhost/zbook/login.php");
+            }
+        } else {
+            echo "utilisateur n'existe pas, vous serez redirigé à la page de connexion";
+            header("refresh:5; url=http://localhost/zbook/login.php");
+        }
+?>
+        </div>
+    </div>

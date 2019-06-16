@@ -35,26 +35,23 @@ session_start();
 	</div>
 </header>
 
-	<!-- barre du haut, contiendra logo, shearchbar etc -->
+<div class="container">
+	<div class="center-text" id="login_form">
+    <form action="connect.php" method="POST">
+      <h2 class="center-text">Connexion à ZBOOK</h2>
+        <div class="centerFormItem form-fields">
+          <label for="username">Utilisateur :</label>
+          <input type="text" class="form-control center-text" id="username" name="username" placeholder="Nom d'utilisateur" required/>
+        </div>
+        <div class="centerFormItem form-fields">
+          <label for="">Password :</label>
+          <input type="password" class="form-control center-text" id="password" name="password" placeholder="Mot de passe" required/>
+        </div>
+      <button type="submit" class="centerFormItem btn btn-primary btn-lg btn-block center-text" id ="connexion" value="Connexion" name="submit">Connexion</button>
+    </form>
+    Pas encore de compte? <a href="Inscription.php" style="font-family:'Play', sans-serif;">Inscrivez-vous ici</a>
 
-    <div class="container">
-		<div class="center-text" id="login_form">
-			<form action="connect.php" method="POST">
-				<h2 class="center-text">Connexion à ZBOOK</h2>
-				<div class="centerFormItem form-fields">
-					<input type="text" class="form-control center-text" id="username" name="username" placeholder="Nom d'utilisateur" required/>
-				</div>
-				<div class="centerFormItem form-fields">
-					<input type="password" class="form-control center-text" id="password" name="password" placeholder="Mot de passe" required/>
-				</div>
-				<button type="submit" class="centerFormItem btn btn-primary btn-lg btn-block center-text" id ="connexion" value="Connexion" name="submit">Connexion</button>
-			</form>
-			Pas encore de compte? <a href="Inscription.php" style="font-family:'Play', sans-serif;">Inscrivez-vous ici</a>
-		</div>
-    </div>
-    
-    <?php include 'template/footerpreset.php' ?>
+  </div>
+</div>
 
-  </body>
-</html>
-
+<?php include 'template/footerpreset.php' ?>
