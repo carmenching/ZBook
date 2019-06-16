@@ -27,7 +27,7 @@ session_start();
 	<div class="container justifycenter">
 		<div class="" id="leftTopBar">
 			<img src="img/mainlogo_nobg.png" id="logo" alt="logo">
-			<h1>ZBooK</h1>
+			<h1 class ="amatic-bold">ZBooK</h1>
 		</div>
 	
 		<div class="row align-items-center" id="BACKTOPBAR">

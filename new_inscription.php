@@ -3,7 +3,6 @@ require('config/DBCNX.php');
 
 // recuperer tous les données envoyés par le formulaire inscription utilisateur
 
-
 // ----verifier tous les données envoyés et si les champs sont vides. ---------
 // debut
 if(isset($_POST['submit'])) { 
@@ -16,6 +15,7 @@ if(isset($_POST['submit'])) {
     $mail = htmlspecialchars(trim($_POST['mail'])); 
     $dob = htmlspecialchars(trim(strtotime($_POST['dob'])));
     $validate = true;
+
     
 
     if(empty($username)) {
@@ -38,12 +38,12 @@ if(isset($_POST['submit'])) {
         $validate = false;
     }
 
-    if(empty($psw)) {
+    if(empty($repeatPassword)) {
         echo "mot de passe ne peut pas être vide";
         $validate = false;
     }
 
-    if($password != $psw) {
+    if($password != $repeatPassword) {
         echo "les mots de passe saisi ne sont pas les mêmes";
     }
 
@@ -60,16 +60,19 @@ if(isset($_POST['submit'])) {
     }
 
 }
+
+echo $lastname." | ". $firstname." | ". $username." | ". $hash." | ". $mail." | ". $dateDeNaissance;
+
 // fin de vérification ----------------------------------
 
 // envoyer les donées récu vers la bdd
 if ($validate) {
-    if($subscribe = $mysqli->prepare("INSERT INTO user(LastNameUser, FirstNameUser, PseudoUser, PasswordUser, MailUser, BirthDateUser) VALUES (?,?,?,?,?,?)")) {
+    if($subscribe = $mysqli->prepare("INSERT INTO USER(LastNameUser, FirstNameUser, PseudoUser, PasswordUser, MailUser, BirthDateUser) 
+    VALUES (?,?,?,?,?,?)")) {
         $format = "ssssss";        
-       
         $subscribe->bind_param($format, $lastname, $firstname ,$username, $hash, $mail, $dateDeNaissance);
         $subscribe->execute();
-        echo "user added";
-    };
-    $subscribe->close();
+    }; 
+    $subscribe->close();      
+    header("Location: accountCreated.php");      
 }
