@@ -13,7 +13,7 @@
     <td><input type="password" name="PasswordUser"></td>
   </tr>
   <tr>
-    <td colspan="2" align="center"><input type="submit" value="Connexion"></td>
+    <td colspan="2" align="center"><input type="submit" value="Connexion"> </td>
   </tr>
 </table>
 </form></p>
