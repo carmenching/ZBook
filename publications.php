@@ -3,15 +3,16 @@ require('config/DBCNX.php');
 session_start();
 
 // envoyer le contenu d'un post vers la bdd
+if (!empty($_POST['postContent'])||!isset($_POST['postContent'])) {
+    if($send = $mysqli->prepare("INSERT INTO post(ContentPost, IDUser) VALUES (?,?)")) {
+        $si = "si";
+        $postContent = $_POST['postContent'];
+        $userID = $_SESSION['userID'];
 
-if($send = $mysqli->prepare("INSERT INTO post(ContentPost, IDUser) VALUES (?,?)")) {
-    $si = "si";
-    $postContent = $_POST['postContent'];
-    $userID = $_SESSION['userID'];
-
-    $send->bind_param($si, $postContent, $userID);
-    $send->execute();
-    $send->close();
+        $send->bind_param($si, $postContent, $userID);
+        $send->execute();
+        $send->close();
+    }
 };
 
 

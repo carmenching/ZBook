@@ -41,7 +41,7 @@
 	<div class="container justifycenter">
 		<div class="" id="leftTopBar">
 			<a href="<?= $rootPath ?>index.php" class="lh-3 wt"><img src="<?= $rootPath; ?>img/mainlogo_nobg.png" id="logo" alt="logo"></a>
-			<h1>ZBooK</h1>
+			<h1 class="amatic-bold">ZBooK</h1>
 		</div>
 		<div class="justifycenter aligncenter" id="BACKTOPBAR">
 			<a href="<?=$rootPath?>profile.php?user=<?=$_SESSION['username']?>" class="wt navitem text-center"> <img src="<?=$rootPath?>img/buttonprofile.png" style="width:45px;" alt="PROFIL"><?= $_SESSION['username']?></a>
