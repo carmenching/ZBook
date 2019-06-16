@@ -1,0 +1,29 @@
+#userTitle {
+    display: flex;
+}
+
+#profileTable {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px #d3d3d3 solid;
+    border-radius: 10px;
+}
+
+#profileAvatar {
+    width: 100px;
+    height: 100px;
+    margin-right: 30px;
+}
+
+#userPseudo {
+    line-height: 2;
+}
+
+li {
+    list-style-type: none;
+}
+
+#chatWith {
+    line-height: 6;
+}

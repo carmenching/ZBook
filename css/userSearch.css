@@ -1,0 +1,31 @@
+#userSearch {
+    flex-direction: column;
+}
+
+#searchUserName {
+    width: 80%;
+    height: 40px;
+}
+
+#usersList {
+    border: grey solid 1px;
+    width: 80%;
+    border-top: none;
+}
+
+.resultUser {
+    display: flex;
+    margin-top: 10px;
+    border-bottom: solid 1px grey;
+    padding-left: 15px;
+}
+
+.userResult {
+    margin-right: 10px;
+}
+
+.align-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

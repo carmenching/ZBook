@@ -1,50 +1,52 @@
 <?php
-require('config/msgquery.php');
-?>
-<?php
 require('config/DBCNX.php');
-require ('template/headerpreset.php');
+session_start();
+$action="messenger";
+include 'template/headerpreset.php';
+$currentUser = $_SESSION['userID'];
+
 ?>
-
-
-<!-- contient la page en elle même, timeline + barre latérale, .... -->
-<div id="FULLPAGE" class="row">	
-
-	<!-- Barre latérale gauche -->
-	<div class="void col-0 col-sm-1 col-md-2">
-	</div>
-
-	<!-- contient la division centrale de la page (timeline + module de publication) -->
-	<div id="MIDDLE" class="col-12 col-sm-10 col-md-8">
-		<script type="text/javascript" src="ajax/messagerie.js"></script>
-		<?php print ( empty($messages) ) ? '<p id="nopost">Aucun message !</p>' :''; ?>
-		<div id="messagerie">
-			<?php ?>
-			<form action="messagerie.php">
-				<label for="auteur">Auteur :</label><input type="text" id="auteur" size="20" />
-				<label for="corps">Message :</label><textarea id="corps" cols="30" rows="7"></textarea>
-				<input type="submit" value="Envoyer" />
-			</form>
+<section id="messenger" class="container wb mt-5 mb-5">
+    <aside>
+        <div class="chat_header leftradius">
+			<h2 class="destined_user">Users</h2>
 		</div>
-		<div id="messages">
-			<?php
-			foreach($messages as $message) {
-				printMessage($message);
-			}
-			?>
+        <ul>
+            <?php 
+            $chatwithQuery = "SELECT friend.IDUser_Sender, user.PseudoUser FROM friend, user WHERE user.IDUser=friend.IDUser_Sender AND friend.requestStatus =\"Accept\" AND friend.IDUser = ".$currentUser;
+            if($chatWithFetch = $mysqli->prepare($chatwithQuery)) {
+                $chatWithFetch->execute();
+                $result = $chatWithFetch->get_result();
+                while($chatWtih = $result->fetch_assoc()) {
+                        echo "<li class=\"chatWithUser\"><a href=\"#\" class=\"link p-3\" id=\"".$chatWtih['IDUser_Sender']."\">".$chatWtih['PseudoUser']."</a></li>";
+                } 
+            }
+        
+            ?>
+        </ul>
+    </aside>
+	<section id="messages_panel">
+		<div class="chat_header rightradius">
+			<h2 class="destined_user"><span id="chatWithTitle">Sélectionner un utilisateur</h2>
 		</div>
-	</div>
+		<div id="message_sent">
+			
+		</div>
+        <form style="display:none;" id="message_edit" action="sendMessage.php" method="POST">
+            <input id="chatWith" name="chatWith" type="hidden" value="">
+            <textarea name="message_editor" id="message_editor" cols="30" rows="10"></textarea>
+            <input type="submit" value="Envoyer">
+        </form>
+		
+	</section>
+</section>
 
-	<!-- Barre latérale de menu -->
-	<div class="void col-0 col-sm-1 col-md-2">
-	</div>
-</div>
-
-<div class="spacer"></div>
-
+<script src="<?=$rootPath?>ajax/messagerie.js"></script>
+<script>
+    
+    
+</script>
 <?php
-require('template/footerpreset.php');
-?>
 
-</body>
-</html>
+include 'template/footerpreset.php';
+?>
