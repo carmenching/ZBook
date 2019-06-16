@@ -5,10 +5,6 @@ if(!isset($_SESSION['username'])) {
 } 
 require('config/DBCNX.php');
 // recuperer la session d'utilisateur et injecter l'info sur header
-<<<<<<< HEAD
-session_start();
-=======
->>>>>>> 2f5a23883134ddcea959e156eec66f4d294c9657
 include 'template/headerpreset.php';
 
 $query = "UPDATE user SET lastActive=NOW() WHERE IDUser =".$_SESSION['userID'];
@@ -21,31 +17,6 @@ if($update = $mysqli->prepare($query)) {
 <div id="FULLPAGE" class="row">	
 
 	<!-- contient la division centrale de la page (timeline + module de publication) -->
-<<<<<<< HEAD
-	<div id="MIDDLE" class="col-12 col-sm-10 col-md-8">
-
-		<!-- module de publication -->
-<div id="PUBLISHER" class="row">
-<form action="publications.php" method="post" class="col-12">
-	<div class="lilspacer row"></div>
-	<div class="row">
-		<div class="col-2"><img src=""></div>
-		<p class="col-8 text-center bt" id="POSTTOPTEXT">Publier Un Post</p>
-		<div class="col-2"></div>
-	</div>
-	<div class="row">
-		<img src="" class="col-1">
-		<input type='text' class="form-control col-10" rows="4" name="postContent" id="postContent"></input>
-		<div class="col-1"><div class="row"><input type="submit" valeur="Send" class="col-12" src="img/buttonmessage.png" id="BUTTONPUB" style="width: 40px; height: 40px;"></input></div></div>
-	</div>
-	<div class="lilspacer row"></div>
-			</form>
-		</div>
-		
-		<!-- la timeline en elle même -->
-		<div id="TIMELINE">
-			<!-- ceci est un type post: -->
-=======
 	<div class="container">
 		<div class="row mb-5 mt-5">
 			<div id="usersOnline" class="p-4 col-2">
@@ -65,7 +36,6 @@ if($update = $mysqli->prepare($query)) {
 					?> 
 				</ul>
 			</div>
->>>>>>> 2f5a23883134ddcea959e156eec66f4d294c9657
 
 			<div id="PUBLISHER" class="p-4 col-10">
 				<form action="publications.php" method="post" id="submit_post">
