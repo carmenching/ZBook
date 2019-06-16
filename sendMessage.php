@@ -38,7 +38,6 @@ if($insertMessage = $mysqli->prepare($insertMessageQuery)) {
 $lastMessageQuery = "SELECT messageContent FROM message WHERE message_userID = ".$idConvUser." AND messageSentBy = ".$currentUser." ORDER BY messageDate DESC LIMIT 1";
 if ($fetchLastMessage = $mysqli->query($lastMessageQuery)) {
     while ($lastMessage = $fetchLastMessage->fetch_assoc()) {
-        var_dump($lastMessage);
         echo "<div class=\"message_block\">
                     <p class=\"message_display\">".$lastMessage['messageContent']."</p>
                     <img class=\"chatwith_avatar\" src=\"".$rootPath."img/currentUser.svg\" alt=\"message sender photo\">
